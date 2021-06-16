@@ -21,3 +21,7 @@
 // Other vendor styles
 // @import "syntax-highlighting/cld";
 @import "syntax-highlighting/bw";
+
+// Own ProjectForge Styles
+// Overwrite Dox Theme Styles
+@import "theme/variables-pf";
