@@ -13,8 +13,8 @@ left:
   - title: Changelogs
     dropdown:
 
-      - title: Timeline Style
-        url: /changelog-timeline/
+      # - title: Timeline Style
+      # url: /changelog-timeline/
 
       - title: Post Style
         url: /changelog-posts/
