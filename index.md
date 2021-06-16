@@ -2,13 +2,13 @@
 layout: page
 width: expand
 hero:
-    title: How can we help you?
-    subtitle: Search or browse in depth articles and videos on everything on Docs Jekyll theme, from basic theme setup to customisation and development
+    title: ProjectForge
+    subtitle: Improve your team work and keep track of budgets, deadlines, human resources and your financial management.
     image: knowledge.svg
     search: true
 ---
 
-{% include boxes.html columns="3" title="Browse Topics" subtitle="Chose an option that you need help with or search above" %}
+{% include boxes.html columns="3" title="Why ProjectForge?" subtitle="Lorem Ipsum." %}
 
 {% include featured.html tag="featured" title="Popular Articles" subtitle="Selected featured articles to get you started fast in Jekyll" %}
 
