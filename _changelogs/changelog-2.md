@@ -12,3 +12,4 @@ Create your own labels, set text and color:
 {% include tag.html tag="fixed" %}
 {% include tag.html tag="security" %}
 {% include tag.html tag="unreleased" %}
+{% include tag.html tag="improved" %}
