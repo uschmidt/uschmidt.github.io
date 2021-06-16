@@ -1,16 +1,16 @@
 # Boxes include navigation
 
-- title: Getting Started
-  desc: Get started fast with installation and theme setup instructions
+- title: Scalable
+  desc: A professional project management, financial and adminstrative controlling platform for teams from small to large.
   icon: cog
-  doc: installation
+  #doc: installation
 
-- title: Theme Features
-  desc: Lean about all the theme options, features and how to use them
+- title: Easy
+  desc: It's easy to use, convenient and multi-lingual. Users do not need to install any software.
   icon: settings
-  doc: hero
+  #doc: hero
 
-- title: Customization
-  desc: Get help or tailor the theme to your specific requirements
+- title: Best of two worlds
+  desc: Protection of investments cause of open source software and professional support and services.
   icon: code
-  doc: customize
+  #doc: customize
