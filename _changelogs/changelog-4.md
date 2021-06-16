@@ -12,8 +12,14 @@ And various other new features, updates, and bug fixes along the way.
 {% include tag.html tag="added" %}
 - checksums for all files in data transfer as well as nightly run of sanity job.
 
-{% include tag.html tag="fixed" %}
+{% include tag.html tag="improved" %}
 - CardDAV support improved (cell phone numbers)
 - Test data in test systems: no more unique constraint violations anymore on new test systems.
+
+{% include tag.html tag="technology" %}
+- Support of Java 13+.
+- Major updates of nearly all libraries.
+- Multi tenancy removed.
+
 
 
