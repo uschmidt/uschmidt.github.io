@@ -10,6 +10,10 @@ changed:
 deprecated:
   text: Deprecated
   color: "#333333"
+  
+improved:
+  text: Improved
+  color: "#ff4772"
 
 removed:
   text: Removed
@@ -23,6 +27,6 @@ security:
   text: Security
   color: "#fb3434"
 
-unreleased:
-  text: Unreleased
+technology:
+  text: technology
   color: "#a037ff"
