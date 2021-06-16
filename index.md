@@ -4,7 +4,7 @@ width: expand
 hero:
     title: ProjectForge
     subtitle: Improve your team work and keep track of budgets, deadlines, human resources and your financial management.
-    image: knowledge.svg
+    image: Illustration_DevOps_omg.svg
     search: true
 ---
 
