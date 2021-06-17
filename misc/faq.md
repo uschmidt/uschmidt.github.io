@@ -4,7 +4,7 @@ width: small
 hero:
     title: Frequently Asked Questions
     subtitle:
-    image: Illustration_DevOps_omg.svg
+    image: faq.svg
 permalink: /misc/faq.html
 ---
 
