@@ -6,7 +6,6 @@ permalink: /misc/imprint.html
 ---
 
 ### Kai Reinhard
-
 #### Micromata GmbH
 Marie-Calm-Str. 1-5<br>
 34131 Kassel<br>
