@@ -2,7 +2,7 @@
 title: Team members section
 subtitle: Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis.
 tags: [features]
-author: alex
+author: kai
 ---
 
 To add the following to a page:
