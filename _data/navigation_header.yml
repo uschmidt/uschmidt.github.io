@@ -5,8 +5,6 @@ left:
     url: /
 
   - title: Docs
-    # url: /docs/installation/
-    url: /docs/quickstart/
     dropdown:
 
       - title: Quick Start
