@@ -1,5 +1,5 @@
 ---
-title: 🚀 ProjectForge 7.1 released
+title: ProjectForge 7.1 released
 date: 20121-04-12
 ---
 
