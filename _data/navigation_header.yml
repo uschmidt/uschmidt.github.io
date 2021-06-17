@@ -6,6 +6,9 @@ left:
 
   - title: Docs
     url: /docs/installation/
+    
+  - title: FAQ
+    url: /faq/faq-main
 
   - title: Blog
     url: /blog/
