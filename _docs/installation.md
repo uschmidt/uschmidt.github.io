@@ -10,6 +10,11 @@ tags: [setup]
 You may choose now between Docker based installation or normal
 installation.
 
+#### Sections in this article
+{:.no_toc}
+* TOC
+{:toc}
+
 ## Docker
 
 You may install ProjectForge as docker image.
