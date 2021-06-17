@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Feeling Lost
+title: Imprint
 width: small
 permalink: /misc/imprint.html
 ---
