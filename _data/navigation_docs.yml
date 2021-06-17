@@ -1,15 +1,19 @@
-- title: Getting Started
+- title: Documentation
   docs:
+  - quickstart
   - installation
-  - setup
-  - navigation
-  - footer
-  - posts
-  - docs
-  - comments
-  - analytics
+  - userguide
+  - technologies
+  # - installation
+  # - setup
+  # - navigation
+  # - footer
+  # - posts
+  # - docs
+  # - comments
+  # - analytics
 
-- title: Theme Features
+- title: Installation
   docs:
   - hero
   - boxes
