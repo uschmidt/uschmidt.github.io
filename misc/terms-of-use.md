@@ -11,10 +11,10 @@ permalink: /misc/terms-of-use.html
 
 ### License
 
-Project ProjectForge Community Edition<br>
-www.projectforge.org
+ProjectForge Community Edition<br>
+[www.projectforge.org](https://www.projectforge.org)
 
-Copyright (C) 2001-2021 Kai Reinhard (k.reinhard at micromata.com)v
+Copyright &copy; 2001-2021 Kai Reinhard (k.reinhard at micromata.com)<br>
 Micromata GmbH<br>
 Marie-Calm-Str. 1-5<br>
 34131 Kassel
