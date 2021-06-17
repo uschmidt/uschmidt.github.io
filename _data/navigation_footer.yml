@@ -2,6 +2,12 @@
 
 - title: Home
   url: /
+  
+- title: Imprint
+  url: /
+
+- title: Privacy Policy
+  url: /
 
 - title: Blog
   url: /blog/
