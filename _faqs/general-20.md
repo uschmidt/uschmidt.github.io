@@ -1,6 +1,6 @@
 ---
-title: My time sheets are not displayed in the calendar view?
+title: Calendar view changes time period on reload?
 categories: [general]
 ---
 
-At the top of the dialog on the right side you can click on the clock symbol or user selection symbol for showing the time sheets. You can click on the symbol for birthdays to show/hide birthdays.
+This happens if you have set different time zones: Please note, that your time zone under 'my account' or config.xml in ProjectForge and the time zone of your client system should match.
