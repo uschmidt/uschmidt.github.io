@@ -2,8 +2,8 @@
   docs:
   - quickstart
   - installation
-  - userguide
-  - technologies
+  # - userguide
+  # - technologies
   # - installation
   # - setup
   # - navigation
