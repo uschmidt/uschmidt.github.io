@@ -6,7 +6,6 @@ hero:
     subtitle:
     image: faq.svg
 permalink: /misc/faq.html
-class: foo
 ---
 
 {% include faqs.html multiple="true" title="General" category="general" %}
