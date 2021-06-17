@@ -1,0 +1,2 @@
+<p>You can download the binaries from <a href="{{ site.data.links[include.link].text }}">Sourceforge</a> or <a href="https://hub.docker.com/repository/docker/micromata/projectforge">Docker Hub</a>.<br>
+  Go to express installation</p>
