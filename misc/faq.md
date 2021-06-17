@@ -2,7 +2,7 @@
 layout: page
 width: small
 title: FAQ
-subtitle: This document covers the setup and options of theme feature described in the doc title
+subtitle: foo
 author: kai
 tags: [faq-main]
 permalink: /misc/faq.html
