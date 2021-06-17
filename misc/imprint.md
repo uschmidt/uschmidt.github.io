@@ -5,27 +5,26 @@ width: small
 permalink: /misc/imprint.html
 ---
 
-Kai Reinhard
+### Kai Reinhard
 
-Micromata GmbH
-
+#### Micromata GmbH
 Marie-Calm-Str. 1-5
 34131 Kassel
 Germany
 
-Niederlassung:
+#### Niederlassung:
 Menuhinstraße 8
 53113 Bonn
-Geschäftsführung
 
+### Geschäftsführung
 Kai Reinhard, Alexander Podlich, Stéphanie Naujock
 
 V.i.S.d.P.:
 Kai Reinhard
 Marie-Calm-Straße 1-5
 34131 Kassel
-Kontakt
 
+### Kontakt
 Web: www.projectforge.org
 E-Mail: k.reinhard at micromata.com
 
@@ -34,10 +33,8 @@ Fax: +49 561 31 67 93-11
 
 AG Kassel HRB 7370
 USt-ID: DE209259169
-Copyright law / Right of use
 
-### ProjectForge®
-
+### Copyright law / Right of use
 ProjectForge® is a registered trademark.<br>
 
 The contents published on the website are subject to copy right. All photographs are subjected to the right of use. The reproduction or redistribution of part or all texts or photographs is not allowed without written permission from the copyright holder. 
