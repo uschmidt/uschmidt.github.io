@@ -14,4 +14,4 @@ DataTransfer supports now personal boxes for one to one exchange of files. Docke
 {% include tag.html tag="technology" %}
 - Update of all JavaScript libs (React etc.)
 
-{% include download-link.html link="7.1.1" %}
+{% include download-link.html %}
