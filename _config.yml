@@ -29,40 +29,52 @@ navbar:
 author:
     name:           Kai Reinhard
     title:          Architect, Lead Developer  
-    avatar:         avatar-tom.png
+    avatar:         avataaars.png
 
 # Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
 authors:
-    john:
-      name:         John Brown
-      title:        Support     
-      avatar:       avatar-john.png
-    evan:
-      name:         Evan Wells
-      title:        Support    
-      avatar:       avatar-evan.png
-    sara:
-      name:         Sara Galen
-      title:        Lead Developer     
-      avatar:       avatar-sara.png
-    alex:
-      name:         Alex Koch
-      title:        Design Engineer     
-      avatar:       avatar-alex.png
+    kai:
+      name:         Kai Reinhard
+      title:        Architect, Developer     
+      avatar:       avataaars.png
+    wolfgang:
+      name:         Wolfgang Jung
+      title:        Architect, Developer     
+      avatar:       avataaars.png
+    christian:
+      name:         Christian Claus
+      title:        Developer    
+      avatar:       avataaars.png
     daniel:
-      name:         Daniel Shultz
+      name:         Daniel Ludiwg
+      title:        Lead Developer     
+      avatar:       avataaars.png
+    roger:
+      name:         Roger Kommer
+      title:        Design Engineer     
+      avatar:       avataaars.png
+    christiant:
+      name:         Christian Tausenfreund
       title:        Developer      
-      avatar:       avatar-daniel.png
-    tom:
-      name:         Tom Farrell
+      avatar:       avataaars.png
+    stefan:
+      name:         Stefan Niemczyk
       title:        Developer     
-      avatar:       avatar-tom.png
+      avatar:       avataaars.png
+    jan:
+      name:         Jan Brümmer
+      title:        Developer     
+      avatar:       avataaars.png
+    johann:
+      name:         Johann Feeser
+      title:        Developer     
+      avatar:       avataaars.png
 
 # Social icons displayed in footer
 social:
     email:
     website:
-    facebook:       https://www.facebook.com/
+    facebook:       https://www.facebook.com/pages/Micromata/303133633035
     flickr:
     dribbble:
     github:
@@ -70,7 +82,7 @@ social:
     instagram:      https://www.instagram.com/
     linkedin:
     pinterest:
-    twitter:        https://twitter.com/
+    twitter:        https://twitter.com/micromata
     vimeo:          https://vimeo.com/
     youtube:
 
