@@ -3,7 +3,7 @@ layout: page
 width: small
 hero:
     title: Frequently Asked Questions
-    subtitle: Improve your team work and keep track of budgets, deadlines, human resources and your financial management.
+    subtitle:
     image: Illustration_DevOps_omg.svg
 permalink: /misc/faq.html
 ---
