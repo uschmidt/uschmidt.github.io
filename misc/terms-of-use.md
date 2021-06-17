@@ -1,10 +1,15 @@
+---
+layout: page
+title: Terms of Use
+width: small
+permalink: /misc/terms-of-use.html
+---
 
-Terms of Use
+## Join us, do it yourself.
 
-##Join us, do it yourself.
+#### The most famous OpenSource license make sure the protection of investments and the possibility for own extensions, development and improvements.
 
-####The most famous OpenSource license make sure the protection of investments and the possibility for own extensions, development and improvements.
-License
+### License
 
 Project ProjectForge Community Edition<br>
 www.projectforge.org
