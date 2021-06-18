@@ -31,21 +31,24 @@ Login as admin user and create one account per project member (administration su
 
 Login as admin user and create a top level structure element with the name of your company (JavaGurus Inc.). Click on the menu item "structure tree" and on the button "add". Select the ProjectForge®'s root structure element as parent. Create this structure element (and click the search button in the tree view for refreshing your structure tree).
 
-| Name of structure element | Parent structure element |
-| JavaGurus Inc. |	ProjectForge®'s root structure element | 
+| Name of structure element | Parent structure element               |
+| ------------------------- | -------------------------------------- |
+| JavaGurus Inc.            |	ProjectForge®'s root structure element | 
 
 ### Create a group for all employees
 
 Add a user group (meu item "Administration" -> "Groups") named e. g. "JavaGurus employees".
 
-| Group name | Assigned members |
-| JavaGurus employees | 	Lind, Dave, Betty.|
+| Group name          | Assigned members    |
+| ------------------- | ------------------- |
+| JavaGurus employees | 	Lind, Dave, Betty. |
 
 ### Create project member group
 
 Go to administration -> groups and create a new group:
 
-| Group name | Assigned members | 
+| Group name           | Assigned members    | 
+| -------------------- | ------------------- |
 | ACME web portal team | Linda, Dave, Betty. | 
 
 Assign the members while selecting all members and clicking the left-arrow-icon. You can select multiple entries by using the keys Shift or Ctrl for assigning them at once.
@@ -55,7 +58,8 @@ Assign the members while selecting all members and clicking the left-arrow-icon.
 Click on the menu entry 'structure tree' and create a structure element named as your project:
 
 | Name of structure element | Parent structure element |
-| ACME web portal | Root (select parent structure element by clicking on the hierarchy icon and simply select Root). |
+| ------------------------- | ----------------------------------------------------------------------------------------------- |
+| ACME web portal           | Root (select parent structure element by clicking on the hierarchy icon and simply select Root). |
 
 can change the hierarchy and the names of your structure elements (e. g. for organizing your projects per customer) later, so start with your project as top level structure element. Also user names, group names etc. can be changed any time you want without loosing any references in the system.
 
@@ -66,9 +70,9 @@ You can change the hierarchy and the names of your structure elements (e. g. for
 
 ProjectForge® has an very detailed access management, so you can configure which user has which access to the system. Enable your ACME web portal team for working with the project. Some access rights depends on the structure elements, so define the access to a structure element by choosing the menu entry 'access management' and clicking the button 'create':
 
-| Structure element | Group | Recursive |	Description | Access rights |
-| ----------------- | ----- | --------- | ----------- | ------------- |
-| JavaGurus Inc. | JavaGurus employees | yes | The employee's main structure element for books, addresses, for time sheets not assigned to projects such as ill-ness, holiday, research and development etc. | Choose template 'employee'.
+| Structure element | Group               | Recursive |	Description | Access rights |
+| ----------------- | ------------------- | --------- | ----------- | ------------- |
+| JavaGurus Inc.    | JavaGurus employees | yes | The employee's main structure element for books, addresses, for time sheets not assigned to projects such as ill-ness, holiday, research and development etc. | Choose template 'employee'.
 | ACME web portal |	ACME web portal team | yes | The top-level structure element for the ACME web portal project. | Choose template 'employee'. | 
 
 If they're are any labels or text fields with italic letters (such as the label 'recursive') you'll get a tool-tip explaning the component when you place your mouse over such elements.
