@@ -33,9 +33,19 @@ table {
 
 pre {
   color: #b90505;
+  font-size: .775rem;
+  background: #f4f4f4;
+  
+  &.highlight {
+    padding: 20px;
+  }
 }
 
 .uk-navbar-dropdown {
   padding: 10px 20px;
   top: 60px !important;
+}
+
+.uk-navbar-nav > li > a {
+  font-weight: 700;
 }
