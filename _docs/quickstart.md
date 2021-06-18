@@ -19,7 +19,8 @@ After the creation of the users you can use the wizard of the structure tree pag
 
 Login as admin user and create one account per project member (administration sub-menu users). In this example we start with three team members, one project manager and two team members: 
 
-| Username |	Description (team role) | E-Mail c Assigned groups |
+| Username |	Description (team role) | E-Mail | Assigned groups |
+| -------- | ----------------------- | ------ | --------------- |
 | linda | Project manager | l.evans@javagurus.com |	PF_ProjectManager |
 | dave | Developer | d.jones@javagurus.com |	- |
 | betty | Developer | b.brown@javagurus.com | - |
