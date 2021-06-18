@@ -16,7 +16,7 @@ $base-link-hover-color:                         $global-color;
 $link-muted-hover-color:                        $global-color;
 
 // Font
-$global-font-family:                            'Open Sans', system-ui;
+$global-font-family:                            'Assistant', system-ui, sans-serif;
 $global-xxlarge-font-size:                      2.25rem;    // H1
 $global-xlarge-font-size:                       1.6875rem;  // H2
 $global-large-font-size:                        1.375rem;   // H3
@@ -25,7 +25,7 @@ $global-small-font-size:                        0.875rem;
 $xsmall-font-size:                              0.8125rem;
 $heading-primary-font-size:                     2.875rem;
 $heading-primary-font-size-m:                   3.75rem;
-$base-heading-font-weight:                      bold;
+$base-heading-font-weight:                      700;
 $base-heading-margin-top:                       50px;
 $base-h2-line-height:                           1.4;
 $text-lead-font-size:                           1.125rem;
