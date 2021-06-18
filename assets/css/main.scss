@@ -24,4 +24,7 @@
 
 // Own ProjectForge Styles
 // Overwrite Docs Theme Styles
-@import "theme/foo";
+
+table {
+  background: red;
+}
