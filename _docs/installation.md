@@ -40,8 +40,7 @@ For test or small installations you may use the built-in data base
 
 5.  Enjoy.
 
-You may monitor the log file:
-`tail -f ~/ProjectForge/logs/ProjectForge.log`
+You may monitor the log file: `tail -f ~/ProjectForge/logs/ProjectForge.log`
 
 ### Running as stack (docker-compose)
 
@@ -66,8 +65,7 @@ docker container (for productive and larger installations).
 
 7.  Enjoy.
 
-You may monitor the log file:
-`tail -f ~/ProjectForge/logs/ProjectForge.log`
+You may monitor the log file: `tail -f ~/ProjectForge/logs/ProjectForge.log`
 
 ### Building docker container from source
 
@@ -87,12 +85,12 @@ ProjectForge as environment variables.
 If you don’t want to use Docker, you’re able to install ProjectForge
 from the executable jar file.
 
-1.  Install openjdk (java 8 should also work, if needed, 11+
+1. Install openjdk (java 8 should also work, if needed, 11+
     recommended).
 
-2.  Get projectForge-application\_version.jar
+2. Get projectForge-application\_version.jar
 
-3.  First start: java -jar projectForge-application\_version.jar
+3. First start: java -jar projectForge-application\_version.jar
 
 Here you will find the supported versions of Java:
 [???](#Supported Java versions)
