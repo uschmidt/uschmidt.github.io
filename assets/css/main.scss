@@ -53,6 +53,10 @@ pre {
   }
 }
 
+.uk-navbar-item.uk-logo img {
+  width: 90px;
+}
+
 .uk-navbar-dropdown {
   padding: 10px 20px;
   top: 60px !important;
@@ -60,4 +64,12 @@ pre {
 
 .uk-navbar-nav > li > a {
   font-weight: 700;
+}
+
+.uk-accordion .link-primary a:not(.lightbox):not(.uk-inline):not(.uk-link-muted):not(.uk-slidenav) {
+  border-bottom: none;
+}
+
+p.hero-image img {
+  height: 400px;
 }
