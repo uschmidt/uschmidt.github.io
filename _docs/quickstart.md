@@ -70,10 +70,10 @@ You can change the hierarchy and the names of your structure elements (e. g. for
 
 ProjectForge® has an very detailed access management, so you can configure which user has which access to the system. Enable your ACME web portal team for working with the project. Some access rights depends on the structure elements, so define the access to a structure element by choosing the menu entry 'access management' and clicking the button 'create':
 
-| Structure element | Group               | Recursive |	Description | Access rights |
-| ----------------- | ------------------- | --------- | ----------- | ------------- |
-| JavaGurus Inc.    | JavaGurus employees | yes | The employee's main structure element for books, addresses, for time sheets not assigned to projects such as ill-ness, holiday, research and development etc. | Choose template 'employee'.
-| ACME web portal |	ACME web portal team | yes | The top-level structure element for the ACME web portal project. | Choose template 'employee'. | 
+| Structure element | Group                | Recursive |	Description | Access rights |
+| ----------------- | -------------------- | --------- | ----------- | ------------- |
+| JavaGurus Inc.    | JavaGurus employees  | yes       | The employee's main structure element for books, addresses, for time sheets not assigned to projects such as ill-ness, holiday, research and development etc. | Choose template 'employee'.
+| ACME web portal   |	ACME web portal team | yes      | The top-level structure element for the ACME web portal project. | Choose template 'employee'. | 
 
 If they're are any labels or text fields with italic letters (such as the label 'recursive') you'll get a tool-tip explaning the component when you place your mouse over such elements.
 Finish
