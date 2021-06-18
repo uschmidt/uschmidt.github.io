@@ -128,49 +128,49 @@ these settings later in `projectforge.properties` or `config.xml`.
 <col style="width: 75%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Directory</strong></p></td>
-<td style="text-align: left;"><p>ProjectForge’s home directory including configuration, database and working directory.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Directory</strong></td>
+<td style="text-align: left;">ProjectForge’s home directory including configuration, database and working directory.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p><strong>Domain</strong></p></td>
-<td style="text-align: left;"><p>The domain of your system (<a href="http://localhost:8080">http://localhost:8080</a> for test systems). This is needed e. g. for sending e-mail-notification to users including direct links to your installation of ProjectForge.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Domain</strong></td>
+<td style="text-align: left;">The domain of your system (<a href="http://localhost:8080">http://localhost:8080</a> for test systems). This is needed e. g. for sending e-mail-notification to users including direct links to your installation of ProjectForge.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Port</strong></p></td>
-<td style="text-align: left;"><p>ProjectForge starts the server on this port (8080 should be OK for most cases and can’t be modified for docker installation).</p></td>
+<tr>
+<td style="text-align: left;"><strong>Port</strong></td>
+<td style="text-align: left;">ProjectForge starts the server on this port (8080 should be OK for most cases and can’t be modified for docker installation).</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p><strong>Database</strong></p></td>
-<td style="text-align: left;"><p>Choose the data base. Embedded uses the built-in data base of ProjectForge (Hsql DB) and should be OK for test, development or small instances. In docker mode only PostgreSQL is available.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Database</strong></td>
+<td style="text-align: left;">Choose the data base. Embedded uses the built-in data base of ProjectForge (Hsql DB) and should be OK for test, development or small instances. In docker mode only PostgreSQL is available.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Jdbc settings</strong></p></td>
-<td style="text-align: left;"><p>If you choose PostgreSQL you are able to enter the data base connection values and test them by clicking <strong>Test connection</strong>.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Jdbc settings</strong></td>
+<td style="text-align: left;">If you choose PostgreSQL you are able to enter the data base connection values and test them by clicking <strong>Test connection</strong>.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p><strong>Currency</strong></p></td>
-<td style="text-align: left;"><p>The default currency to use.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Currency</strong></td>
+<td style="text-align: left;">The default currency to use.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Locale</strong></p></td>
-<td style="text-align: left;"><p>The default locale to use. Your users are able to choose their own language.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Locale</strong></td>
+<td style="text-align: left;">The default locale to use. Your users are able to choose their own language.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p><strong>First day</strong></p></td>
-<td style="text-align: left;"><p>The first day of week to use in the calendar views.</p></td>
+<tr>
+<td style="text-align: left;"><strong>First day</strong></td>
+<td style="text-align: left;">The first day of week to use in the calendar views.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Time</strong></p></td>
-<td style="text-align: left;"><p>The default time notation to use (customizable by the users).</p></td>
+<tr>
+<td style="text-align: left;"><strong>Time</strong></td>
+<td style="text-align: left;">The default time notation to use (customizable by the users).</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p><strong>Setting</strong></p></td>
-<td style="text-align: left;"><p>Start ProjectForge - If checked, ProjectForge will be started after clicking <strong>Finish</strong>. For embedded data base, the data base is created.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Setting</strong></td>
+<td style="text-align: left;">Start ProjectForge - If checked, ProjectForge will be started after clicking <strong>Finish</strong>. For embedded data base, the data base is created.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Setting</strong></p></td>
-<td style="text-align: left;"><p>Enable CORS filter - Please check only for development (React development using yarn or npm). Do not use for productive systems!!!</p></td>
+<tr>
+<td style="text-align: left;"><strong>Setting</strong></td>
+<td style="text-align: left;">Enable CORS filter - Please check only for development (React development using yarn or npm). Do not use for productive systems!!!</td>
 </tr>
 </tbody>
 </table>
@@ -203,33 +203,33 @@ displayed.](images/setup-webpage.png)
 <col style="width: 75%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Target</strong></p></td>
-<td style="text-align: left;"><p>Choose <strong>Productive system</strong> for starting with an empty initialized data base. Choose <strong>Test system</strong> for installing a test system with lots of test data.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Target</strong></td>
+<td style="text-align: left;">Choose <strong>Productive system</strong> for starting with an empty initialized data base. Choose <strong>Test system</strong> for installing a test system with lots of test data.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p><strong>User name</strong></p></td>
-<td style="text-align: left;"><p>The user name of the initial admin user of ProjectForge.</p></td>
+<tr>
+<td style="text-align: left;"><strong>User name</strong></td>
+<td style="text-align: left;">The user name of the initial admin user of ProjectForge.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Password</strong></p></td>
-<td style="text-align: left;"><p>Admin’s password.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Password</strong></td>
+<td style="text-align: left;">Admin’s password.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p><strong>Default time zone</strong></p></td>
-<td style="text-align: left;"><p>Default time zone for all users, if not configured by an user und MyAccount.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Default time zone</strong></td>
+<td style="text-align: left;">Default time zone for all users, if not configured by an user und MyAccount.</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Calendar domain</strong></p></td>
-<td style="text-align: left;"><p>ProjectForge provides calendar and events. For having world-wide unique event id’s, choose here your personal name.</p></td>
+<tr>
+<td style="text-align: left;"><strong>Calendar domain</strong></td>
+<td style="text-align: left;">ProjectForge provides calendar and events. For having world-wide unique event id’s, choose here your personal name.</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p><strong>Administrators</strong></p></td>
-<td style="text-align: left;"><p>ProjectForge sends e-mails to this address(es) in the case of special errors. You can specify one ore more (coma separated) addresses (RFC822).</p></td>
+<tr>
+<td style="text-align: left;"><strong>Administrators</strong></td>
+<td style="text-align: left;">ProjectForge sends e-mails to this address(es) in the case of special errors. You can specify one ore more (coma separated) addresses (RFC822).</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p><strong>Feed-back</strong></p></td>
-<td style="text-align: left;"><p>If this e-mail is given then a feedback panel will be shown if an error occurs. The user has the possibility to send an e-mail feedback (e. g. JIRA-system or help desk).</p></td>
+<tr>
+<td style="text-align: left;"><strong>Feed-back</strong></td>
+<td style="text-align: left;">If this e-mail is given then a feedback panel will be shown if an error occurs. The user has the possibility to send an e-mail feedback (e. g. JIRA-system or help desk).</td>
 </tr>
 </tbody>
 </table>
@@ -412,61 +412,61 @@ after 30 days. Refer config file for all options:
 <col style="width: 42%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><p>Java version</p></td>
-<td style="text-align: left;"><p>V6*</p></td>
-<td style="text-align: left;"><p>V7.0*</p></td>
-<td style="text-align: left;"><p>V7.1+</p></td>
-<td style="text-align: left;"><p>Comments</p></td>
+<tr>
+<td style="text-align: left;">Java version</td>
+<td style="text-align: left;">V6*</td>
+<td style="text-align: left;">V7.0*</td>
+<td style="text-align: left;">V7.1+</td>
+<td style="text-align: left;">Comments</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p>Oracle 1.8</p></td>
-<td style="text-align: left;"><p>+++</p></td>
-<td style="text-align: left;"><p>+</p></td>
-<td style="text-align: left;"><p>+</p></td>
-<td style="text-align: left;"><p>Oracle 1.8 was in production for years up to version 7.1.2. (LDAP master/slave needs Java 11 since 7.1*)</p></td>
+<tr>
+<td style="text-align: left;">Oracle 1.8</td>
+<td style="text-align: left;">+++</td>
+<td style="text-align: left;">+</td>
+<td style="text-align: left;">+</td>
+<td style="text-align: left;">Oracle 1.8 was in production for years up to version 7.1.2. (LDAP master/slave needs Java 11 since 7.1*)</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p>OpenJDK 11</p></td>
-<td style="text-align: left;"><p>-</p></td>
-<td style="text-align: left;"><p>+++</p></td>
-<td style="text-align: left;"><p>+++</p></td>
-<td style="text-align: left;"><p>OpenJDK 11 is used in development (MacOS) and in heavy production since version 7.0.0. (Linux)</p></td>
+<tr>
+<td style="text-align: left;">OpenJDK 11</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">+++</td>
+<td style="text-align: left;">+++</td>
+<td style="text-align: left;">OpenJDK 11 is used in development (MacOS) and in heavy production since version 7.0.0. (Linux)</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p>OpenJDK 12</p></td>
-<td style="text-align: left;"><p>-</p></td>
-<td style="text-align: left;"><p>+</p></td>
-<td style="text-align: left;"><p>?</p></td>
-<td style="text-align: left;"><p>Should run since version V7.0</p></td>
+<tr>
+<td style="text-align: left;">OpenJDK 12</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">+</td>
+<td style="text-align: left;">?</td>
+<td style="text-align: left;">Should run since version V7.0</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p>OpenJDK 13</p></td>
-<td style="text-align: left;"><p>-</p></td>
-<td style="text-align: left;"><p>+</p></td>
-<td style="text-align: left;"><p>?</p></td>
-<td style="text-align: left;"><p>Should run since version V7.0</p></td>
+<tr>
+<td style="text-align: left;">OpenJDK 13</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">+</td>
+<td style="text-align: left;">?</td>
+<td style="text-align: left;">Should run since version V7.0</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p>OpenJDK 14</p></td>
-<td style="text-align: left;"><p>-</p></td>
-<td style="text-align: left;"><p>-</p></td>
-<td style="text-align: left;"><p>?</p></td>
-<td style="text-align: left;"><p>Should run since version V7.1</p></td>
+<tr>
+<td style="text-align: left;">OpenJDK 14</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">?</td>
+<td style="text-align: left;">Should run since version V7.1</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"><p>OpenJDK 15</p></td>
-<td style="text-align: left;"><p>-</p></td>
-<td style="text-align: left;"><p>-</p></td>
-<td style="text-align: left;"><p>+</p></td>
-<td style="text-align: left;"><p>Should run since version V7.1</p></td>
+<tr>
+<td style="text-align: left;">OpenJDK 15</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">+</td>
+<td style="text-align: left;">Should run since version V7.1</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p>OpenJDK 16</p></td>
-<td style="text-align: left;"><p>-</p></td>
-<td style="text-align: left;"><p>-</p></td>
-<td style="text-align: left;"><p>+</p></td>
-<td style="text-align: left;"><p>Should run since version V7.1</p></td>
+<tr>
+<td style="text-align: left;">OpenJDK 16</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">+</td>
+<td style="text-align: left;">Should run since version V7.1</td>
 </tr>
 </tbody>
 </table>
@@ -482,17 +482,17 @@ Java Compability (2021/04/12)
 <col style="width: 25%" />
 </colgroup>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;"><p>-</p></td>
-<td style="text-align: left;"><p>?</p></td>
-<td style="text-align: left;"><p>+</p></td>
-<td style="text-align: left;"><p>+++</p></td>
+<tr>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">?</td>
+<td style="text-align: left;">+</td>
+<td style="text-align: left;">+++</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;"><p>doesn’t run</p></td>
-<td style="text-align: left;"><p>not tested</p></td>
-<td style="text-align: left;"><p>should run, shortly tested</p></td>
-<td style="text-align: left;"><p>recommended, tested in production</p></td>
+<tr>
+<td style="text-align: left;">doesn’t run</td>
+<td style="text-align: left;">not tested</td>
+<td style="text-align: left;">should run, shortly tested</td>
+<td style="text-align: left;">recommended, tested in production</td>
 </tr>
 </tbody>
 </table>
