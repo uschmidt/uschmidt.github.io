@@ -5,6 +5,11 @@ author: kai
 tags: [setup]
 ---
 
+#### Sections in this article
+{:.no_toc}
+* TOC
+{:toc}
+
 ## Introduction
 
 ProjectForge® is designed to improve the efficiency of projects and project teams from single-person-projects up to large-sized projects. 
