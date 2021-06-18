@@ -66,8 +66,8 @@ pre {
   font-weight: 700;
 }
 
-.uk-accordion  li a.link-primary a:not(.lightbox):not(.uk-inline):not(.uk-link-muted):not(.uk-slidenav) {
-  border-bottom: none;
+.uk-accordion  li a.link-primary {
+  border-bottom: none !important;
 }
 
 p.hero-image img {
