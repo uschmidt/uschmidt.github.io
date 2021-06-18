@@ -8,7 +8,7 @@ hero:
     search: true
 ---
 
-{% include boxes.html columns="3" title="Why ProjectForge?" subtitle="ProjectForge is developed as a professional and secure Software. A lot of features make your project management and daily work much easier!!" %}
+{% include boxes.html columns="3" title="Why ProjectForge?" subtitle="ProjectForge is developed as a professional and secure Software. A lot of features make your project management and daily work much easier!" %}
 
 <!-- {% include featured.html tag="featured" title="Popular Articles" subtitle="Selected featured articles to get you started fast in Jekyll" %} -->
 
