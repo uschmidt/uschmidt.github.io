@@ -3,7 +3,7 @@
 ---
 
 // System fonts
-// @import "system-font-css/_system-font";
+@import "system-font-css/_system-font";
 
 // Custom variables and variable overwrites.
 @import "theme/variables";
@@ -26,10 +26,6 @@
 // Overwrite Docs Theme Styles
 
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@700&family=Open+Sans&display=swap');
-
-body {
-  font-family: 'Open Sans', sans-serif;
-}
  
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Assistant', sans-serif;
