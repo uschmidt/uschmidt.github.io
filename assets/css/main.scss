@@ -29,6 +29,18 @@
 
 table {
   width: auto;
+  
+  th {
+    background: #f2f2f2;
+  }
+  
+  th:first-child, table td:first-child {
+    padding-left: 10px;
+  }
+  
+  th:last-child, table td:last-child {
+    padding-right: 10px;
+  }
 }
 
 pre {
