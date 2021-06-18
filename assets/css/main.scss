@@ -25,10 +25,10 @@
 // Own ProjectForge Styles
 // Overwrite Docs Theme Styles
 
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@700&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;700&display=swap');
  
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Assistant', system-ui;
+  font-weight: 700;
 }
 
 table {
