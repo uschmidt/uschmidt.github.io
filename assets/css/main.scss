@@ -66,12 +66,18 @@ pre {
   font-weight: 700;
 }
 
-.uk-accordion  li a.link-primary {
+.uk-container-small .uk-accordion  li a.uk-accordion-title {
   border-bottom: none !important;
 }
 
-* + p, * + ul, * + ol, * + dl, * + pre, * + address, * + fieldset, * + figure {
-  margin-top: 10px;
+.uk-container-xsmall {
+  h4 {
+    margin-bottom: 10px;
+  }
+  
+  * + p, * + ul, * + ol, * + dl, * + pre, * + address, * + fieldset, * + figure {
+    margin-top: 10px;
+  }
 }
 
 p.hero-image img {
