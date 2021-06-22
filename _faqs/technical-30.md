@@ -1,6 +1,6 @@
 ---
-Is there any support for other data bases?
+title: Error messages in the log files of ProjectForge on start-up?
 categories: [technical]
 ---
 
-Data bases such as MySQL, Oracle, MS-SQL-Server etc. should work with minor extensions of the class DatabaseSupport.java. Some body should test this.
+You can ignore the messages "Unable to proxy method..." in the log files on start-up, they're correct.
