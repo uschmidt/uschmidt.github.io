@@ -70,6 +70,10 @@ pre {
   border-bottom: none !important;
 }
 
+* + p, * + ul, * + ol, * + dl, * + pre, * + address, * + fieldset, * + figure {
+  margin-top: 10px;
+}
+
 p.hero-image img {
   height: 400px;
 }
