@@ -5,17 +5,17 @@ author: kai
 tags: [setup]
 ---
 
-# Express installation
-
-You may choose now between Docker based installation or normal
-installation.
-
 #### Sections in this article
 {:.no_toc}
 * TOC
 {:toc}
 
-## Docker
+# 1. Express installation
+
+You may choose now between Docker based installation or normal
+installation.
+
+## 1.1 Docker
 
 You may install ProjectForge as docker image.
 
@@ -26,7 +26,7 @@ should be empty if already exists).
 For test or small installations you may use the built-in data base
 (embedded).
 
-### Running single docker container
+### 1.1.1. Running single docker container
 
 1.  First start
     `docker run -t -i -p 127.0.0.1:8080:8080 -v $HOME/ProjectForge:/ProjectForge --name projectforge micromata/projectforge`
@@ -42,7 +42,7 @@ For test or small installations you may use the built-in data base
 
 You may monitor the log file: `tail -f ~/ProjectForge/logs/ProjectForge.log`
 
-### Running as stack (docker-compose)
+### 1.1.2. Running as stack (docker-compose)
 
 In this docker-compose case ProjectForge is composed with a PostgreSQL
 docker container (for productive and larger installations).
@@ -67,7 +67,7 @@ docker container (for productive and larger installations).
 
 You may monitor the log file: `tail -f ~/ProjectForge/logs/ProjectForge.log`
 
-### Building docker container from source
+### 1.1.3. Building docker container from source
 
 1.  `git clone git@github.com:micromata/projectforge.git`
 
@@ -75,12 +75,12 @@ You may monitor the log file: `tail -f ~/ProjectForge/logs/ProjectForge.log`
 
 3.  `docker build -t micromata/projectforge:latest .`
 
-### Increasing memory
+### 1.1.4. Increasing memory
 
 Edit `~/ProjectForge/environment.sh` for customizing settings of
 ProjectForge as environment variables.
 
-## Java-Installation (without docker)
+## 1.2 Java-Installation (without docker)
 
 If you don’t want to use Docker, you’re able to install ProjectForge
 from the executable jar file.
@@ -95,7 +95,7 @@ from the executable jar file.
 Here you will find the supported versions of Java:
 [???](#Supported Java versions)
 
-## The installation setup wizard (for all installations)
+## 1.3. The installation setup wizard (for all installations)
 
 After first start, you’ll be asked for entering the setup wizard. Go for
 it. There is an console setup wizard available as well as a graphical
