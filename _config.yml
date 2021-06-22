@@ -72,7 +72,7 @@ authors:
 
 # Social icons displayed in footer
 social:
-    email:          test@test.de
+    email:          
     website:        https://projectforge.org
     facebook:       https://www.facebook.com/pages/Micromata/303133633035
     flickr:
@@ -95,7 +95,7 @@ share:
 
 # Default footer image settings
 footer:
-    copyright:      <a href="https://projectforge.org/">ProjectForge&copyM</a> is a registered trade mark.
+    copyright:      <a href="https://projectforge.org/">ProjectForge&copy</a> is a registered trade mark.
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
 # disqus:
