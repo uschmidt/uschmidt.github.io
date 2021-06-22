@@ -105,9 +105,8 @@ terminal output).
 
 Both editions have the same functionality.
 
-![The setup wizard (terminal edition) for choosing ProjectForge’s home
-directory. This step is skipped on docker based
-installation.](images/setup-wizard-step-1.png)
+{% include image.html img="setup-wizard-step-1.png" alt="Setup wizard" caption="The setup wizard (terminal edition) for choosing ProjectForge’s home
+directory. This step is skipped on docker based installation." %}
 
 We assume `/home/projectforge/ProjectForge` as ProjectForge’s home in
 this documentation, but you may choose anything else (will be created or
