@@ -83,7 +83,7 @@ social:
     linkedin:
     pinterest:
     twitter:        https://twitter.com/micromata
-    vimeo:          https://vimeo.com/
+    vimeo:          https://vimeo.com/user44553474
     youtube:
 
 # Share button
@@ -95,7 +95,7 @@ share:
 
 # Default footer image settings
 footer:
-    copyright:      Made by <a href="https://projectforge.org/">ProjectForge</a> in Kassel.
+    copyright:      <a href="https://projectforge.org/">ProjectForge&copyM</a> is a registered trade mark.
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
 # disqus:
