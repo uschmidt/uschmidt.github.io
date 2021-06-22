@@ -1,6 +1,7 @@
 ---
-title: My time sheets are not displayed in the calendar view?
-categories: [general]
+title: Which browsers are supported?
+categories: [technical]
 ---
 
-At the top of the dialog on the right side you can click on the clock symbol or user selection symbol for showing the time sheets. You can click on the symbol for birthdays to show/hide birthdays.
+ProjectForge is developed and tested with Apple Safari, Firefox and Chrome. These browsers should work fine in their current version. The Microsoft Internet Explorer doesn't work with all versions of ProjectForge because it's very time-consuming to develop a version that work well with the IE. The IE is so much different to all other browsers... The use of Firefox or Google Chrome is recommended.
+
