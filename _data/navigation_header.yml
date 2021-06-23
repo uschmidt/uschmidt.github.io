@@ -35,7 +35,7 @@ left:
 right:
 
   - title: Changelog
-    url: /changelog-posts/
+    url: /changelog/
     button: primary-outline
 
   - title: Contact
