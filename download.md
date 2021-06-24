@@ -100,13 +100,15 @@ For any newer version of ProjectForge you'll get a list of new translations not 
 
 
 <table>
-  <tbody>
+  <thead>
     <tr>
       <td>Date</td>
       <td>Link</td>
       <td>Size</td>
       <td>Platform</td>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td>2016-08-16</td>
       <td>Version history on sourceforge: <a target="_blank" href="https://sourceforge.net/projects/pforge/files/ProjectForge/">ProjectForge on SourceForge</a></td>
