@@ -66,18 +66,6 @@ pre {
   font-weight: 700;
 }
 
-.uk-container-small .uk-accordion  li a.uk-accordion-title {
-  border-bottom: 1px solid #ebecee !important;
-  font-weight: 600;
-  padding: 10px;
-  font-size: 16px;
-  
-  + .uk-accordion-content {
-    padding: 15px;
-    margin-top: 5px;
-  }
-}
-
 .uk-container-xsmall {
   h4 {
     margin-bottom: 10px;
@@ -102,4 +90,24 @@ p a {
 #pf-faq .uk-section {
   padding-top: 0;
   padding-bottom: 20px;
+  
+  
+  
+  .uk-accordion {
+    
+    li a.uk-accordion-title {
+      border-bottom: 1px solid #ebecee !important;
+      font-weight: 600;
+      padding: 10px;
+      font-size: 16px;
+  
+      + .uk-accordion-content {
+        padding: 15px;
+        margin-top: 5px;
+      }
+    }
+    
+    > :nth-child(n+2) {
+    margin-top: 10px;
+  }
 }
