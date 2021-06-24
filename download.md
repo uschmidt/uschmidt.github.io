@@ -84,11 +84,166 @@ task.deleted=deleted
 The translations are grouped, it's possible to translate only parts of the file. If any entry is missing in the user's language the translation from the default language is used (English).
 Use one of the following translation files as template:
 
-- I18nResources.properties: The English (default) translation file.
-- I18nResources_de.properties: The German translation file.
+- [I18nResources.properties](https://github.com/micromata/projectforge/blob/master/projectforge-business/src/main/resources/I18nResources.properties}: The English (default) translation file.
+- [I18nResources_de.properties](https://github.com/micromata/projectforge/blob/master/projectforge-business/src/main/resources/I18nResources_de.properties): The German translation file.
 
 Put the translation file to the path: src/main/resources
 Please send any translation file to k.reinhard at me.com, so it'll be part of the next distribution.
 For any newer version of ProjectForge you'll get a list of new translations not yet available in your language (please refer the system administration menu).
 
+## Archive
+<table id="table_1572"> 
+    <tbody>
+              <tr class="row_0 row_first even">
+                                    <td class="col_0 col_first">Date</td>
+                                                <td class="col_1">Link</td>
+                                                <td class="col_2">Size</td>
+                                                <td class="col_3 col_last">Platform</td>
+                              </tr>
+              <tr class="row_1 odd">
+                                    <td class="col_0 col_first">2016-08-16</td>
+                                                <td class="col_1">Version history on sourceforge: <a target="_blank" href="https://sourceforge.net/projects/pforge/files/ProjectForge/">ProjectForge on SourceForge</a></td>
+                                                <td class="col_2">&nbsp;</td>
+                                                <td class="col_3 col_last">&nbsp;</td>
+                              </tr>
+              <tr class="row_2 even">
+                                    <td class="col_0 col_first">2016-07-18</td>
+                                                <td class="col_1"><a target="_blank" href="https://sourceforge.net/projects/pforge/files/ProjectForge/6.1/ProjectForge-application-6.1.0.zip/">ProjectForge-application-6.1.0.zip</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_3 odd">
+                                    <td class="col_0 col_first">2016-04-27</td>
+                                                <td class="col_1"><a target="_blank" href="http://downloads.sourceforge.net/project/pforge/ProjectForge/6.0/ProjectForge-6.0.zip/">ProjectForge-6.0.zip</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_4 even">
+                                    <td class="col_0 col_first">2014-05-16</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/5.4/">ProjectForge-5.4.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_5 odd">
+                                    <td class="col_0 col_first">2013-12-30</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/5.3/">ProjectForge-5.3.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_6 even">
+                                    <td class="col_0 col_first">2013-07-07</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/5.2/">ProjectForge-5.2.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_7 odd">
+                                    <td class="col_0 col_first">2013-05-14</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/5.1/">ProjectForge-5.1.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_8 even">
+                                    <td class="col_0 col_first">2013-04-10</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/5.0/">ProjectForge-5.0.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_9 odd">
+                                    <td class="col_0 col_first">2013-02-06</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/4.3.1/">ProjectForge-4.3.1.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_10 even">
+                                    <td class="col_0 col_first">2013-01-26</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/4.3/">ProjectForge-4.3.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_11 odd">
+                                    <td class="col_0 col_first">2012-12-04</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/4.2/">ProjectForge-4.2.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_12 even">
+                                    <td class="col_0 col_first">2012-06-16</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/4.1.3/">ProjectForge-4.1.3.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_13 odd">
+                                    <td class="col_0 col_first">2012-05-03</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/4.1.0/">ProjectForge-4.1.0.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_14 even">
+                                    <td class="col_0 col_first">2012-04-18</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/4.0.0/">ProjectForge-4.0.0.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_15 odd">
+                                    <td class="col_0 col_first">2011-05-27</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/3.6.1/">ProjectForge-3.6.1.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_16 even">
+                                    <td class="col_0 col_first">2011-03-18</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/3.6.0/">ProjectForge-3.6.0.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_17 odd">
+                                    <td class="col_0 col_first">2011-02-24</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/3.5.4/">ProjectForge-3.5.4.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_18 even">
+                                    <td class="col_0 col_first">2011-02-14</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/3.5.3/">ProjectForge-3.5.3.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_19 odd">
+                                    <td class="col_0 col_first">2011-02-03</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/3.5.2/">ProjectForge-3.5.2.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_20 even">
+                                    <td class="col_0 col_first">2011-01-26</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/3.5.1/">ProjectForge-3.5.1.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_21 odd">
+                                    <td class="col_0 col_first">2011-01-23</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/3.5.0/">ProjectForge-3.5.0.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_22 even">
+                                    <td class="col_0 col_first">2010-11-17</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/3.4.3">ProjectForge-3.4.3.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_23 odd">
+                                    <td class="col_0 col_first">2010-11-08</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/3.4.2">ProjectForge-3.4.2.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">all</td>
+                              </tr>
+              <tr class="row_24 row_last even">
+                                    <td class="col_0 col_first">2010-10-04</td>
+                                                <td class="col_1"><a target="_blank" href="http://sourceforge.net/projects/pforge/files/ProjectForge/3.4.1">ProjectForge-3.4.1.*</a></td>
+                                                <td class="col_2">-</td>
+                                                <td class="col_3 col_last">web-server</td>
+                              </tr>
+          </tbody>
 
+  </table>
