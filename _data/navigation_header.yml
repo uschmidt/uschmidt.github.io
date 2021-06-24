@@ -39,7 +39,7 @@ right:
     button: primary-outline
 
   - title: Download
-    url: /contact/
+    url: /download/
     button: success
 
   # - title: Changelog
