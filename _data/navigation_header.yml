@@ -16,8 +16,8 @@ left:
   - title: FAQ
     url: /misc/faq
 
-  - title: Blog
-    url: /blog/
+  # - title: Blog
+  # url: /blog/
 
   # - title: Changelog
     # url: /changelog-posts/
