@@ -34,11 +34,11 @@ table {
     background: #f2f2f2;
   }
   
-  th:first-child, table td:first-child {
+  th:first-child, td:first-child {
     padding-left: 10px;
   }
   
-  th:last-child, table td:last-child {
+  th:last-child, td:last-child {
     padding-right: 10px;
   }
 }
@@ -48,7 +48,7 @@ pre {
   font-size: .775rem;
   
   &.highlight {
-    padding: 20px;
+    padding: 15px;
     background: #f4f4f4;
   }
 }
@@ -66,10 +66,33 @@ pre {
   font-weight: 700;
 }
 
-.uk-accordion  li a.link-primary {
-  border-bottom: none !important;
+.uk-container-small .uk-accordion  li a.uk-accordion-title {
+  border-bottom: 1px solid #ebecee !important;
+  font-weight: 600;
+  padding: 10px;
+  font-size: 16px;
+  
+  + .uk-accordion-content {
+    padding: 15px;
+    margin-top: 5px;
+  }
+}
+
+.uk-container-xsmall {
+  h4 {
+    margin-bottom: 10px;
+  }
+  
+  * + p, * + ul, * + ol, * + dl, * + pre, * + address, * + fieldset, * + figure {
+    margin-top: 10px;
+  }
 }
 
 p.hero-image img {
   height: 400px;
+}
+
+p a {
+  text-decoration: underiine;
+  color: #BF4040;
 }

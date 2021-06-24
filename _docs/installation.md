@@ -5,17 +5,17 @@ author: kai
 tags: [setup]
 ---
 
-# Express installation
-
-You may choose now between Docker based installation or normal
-installation.
-
 #### Sections in this article
 {:.no_toc}
 * TOC
 {:toc}
 
-## Docker
+# 1. Express installation
+
+You may choose now between Docker based installation or normal
+installation.
+
+## 1.1 Docker
 
 You may install ProjectForge as docker image.
 
@@ -26,7 +26,7 @@ should be empty if already exists).
 For test or small installations you may use the built-in data base
 (embedded).
 
-### Running single docker container
+### 1.1.1. Running single docker container
 
 1.  First start
     `docker run -t -i -p 127.0.0.1:8080:8080 -v $HOME/ProjectForge:/ProjectForge --name projectforge micromata/projectforge`
@@ -42,7 +42,7 @@ For test or small installations you may use the built-in data base
 
 You may monitor the log file: `tail -f ~/ProjectForge/logs/ProjectForge.log`
 
-### Running as stack (docker-compose)
+### 1.1.2. Running as stack (docker-compose)
 
 In this docker-compose case ProjectForge is composed with a PostgreSQL
 docker container (for productive and larger installations).
@@ -67,7 +67,7 @@ docker container (for productive and larger installations).
 
 You may monitor the log file: `tail -f ~/ProjectForge/logs/ProjectForge.log`
 
-### Building docker container from source
+### 1.1.3. Building docker container from source
 
 1.  `git clone git@github.com:micromata/projectforge.git`
 
@@ -75,12 +75,12 @@ You may monitor the log file: `tail -f ~/ProjectForge/logs/ProjectForge.log`
 
 3.  `docker build -t micromata/projectforge:latest .`
 
-### Increasing memory
+### 1.1.4. Increasing memory
 
 Edit `~/ProjectForge/environment.sh` for customizing settings of
 ProjectForge as environment variables.
 
-## Java-Installation (without docker)
+## 1.2 Java-Installation (without docker)
 
 If you don’t want to use Docker, you’re able to install ProjectForge
 from the executable jar file.
@@ -95,7 +95,7 @@ from the executable jar file.
 Here you will find the supported versions of Java:
 [???](#Supported Java versions)
 
-## The installation setup wizard (for all installations)
+## 1.3. The installation setup wizard (for all installations)
 
 After first start, you’ll be asked for entering the setup wizard. Go for
 it. There is an console setup wizard available as well as a graphical
@@ -105,19 +105,16 @@ terminal output).
 
 Both editions have the same functionality.
 
-![The setup wizard (terminal edition) for choosing ProjectForge’s home
-directory. This step is skipped on docker based
-installation.](images/setup-wizard-step-1.png)
+{% include image.html img="setup-wizard-step-1.png" alt="Setup wizard" caption="The setup wizard (terminal edition) for choosing ProjectForge’s home
+directory. This step is skipped on docker based installation." %}
 
 We assume `/home/projectforge/ProjectForge` as ProjectForge’s home in
 this documentation, but you may choose anything else (will be created or
 should be empty if already exists).
 
-![The setup wizard (terminal edition) for configuring the basic
-settings.](images/setup-wizard-step-2.png)
+{% include image.html img="setup-wizard-step-2.png" alt="Setup wizard (terminal edition)" caption="The setup wizard (terminal edition) for configuring the basic settings." %}
 
-![The setup wizard (graphical edition) for configuring and testing the
-data base connection.](images/setup-wizard-gui-jdbc.png)
+{% include image.html img="setup-wizard-gui-jdbc.png" alt="Setup wizard (graphical edition)" caption="The setup wizard (graphical edition) for configuring and testing the data base connection." %}
 
 You may leave the most settings as they are. You are able to change
 these settings later in `projectforge.properties` or `config.xml`.
@@ -187,15 +184,14 @@ ProjectForge is only available on port 8080 from localhost due to
 security reasons. For using https, please refer
 [???](#Reverse Proxy Setup (https)).
 
-## The setup page
+## 1.4 The setup page
 
 Please be aware, that after your first start of ProjectForge, your page
 might be public and be configured by anybody else! So proceed
 immediatelyly with the configuration if your new ProjectForge instance
 is public available.
 
-![After starting ProjectForge the first time, a setup page is
-displayed.](images/setup-webpage.png)
+{% include image.html img="setup-webpage.png" alt="Setup Webpage" caption="After starting ProjectForge the first time, a setup page is displayed." %}
 
 <table>
 <colgroup>
@@ -236,22 +232,20 @@ displayed.](images/setup-webpage.png)
 
 Just click finish to have your ready-to-use installation.
 
-![After initialization you will get this screen. Now restart a last time
-and also all activated plugins are now fully
-available.](images/setup-webpage-finished.png)
+{% include image.html img="setup-webpage-finished.png" alt="Setup Webpage finished" caption="After initialization you will get this screen. Now restart a last time and also all activated plugins are now fully available." %}
 
 Wait until ProjectForge’s initialization is finished and you are
 requested to restart ProjectForge. After restarting all activated
 plugins are also available.
 
-## Activation of built-in-plugins
+## 1.5 Activation of built-in-plugins
 
 ![You have to activate some built-in plugins if you want to use them.
 The plugin "Data transfer" is recommended.](images/admin-plugins.png)
 
-# Customization
+# 2. Customization
 
-## Main configuration file `projectforge.properties`
+## 2.1. Main configuration file `projectforge.properties`
 
 You’ll find an overview of all configuration options here:
 [application.properties](https://github.com/micromata/projectforge/blob/master/projectforge-business/src/main/resources/application.properties)
@@ -261,32 +255,32 @@ automatically by the setup wizard.
 
 Here you may define your company logo.
 
-## Configuration parameters
+## 2.2. Configuration parameters
 
 You’ll find further configuration params through the web application
 under the menu *Administration* → *Configuration*.
 
-## Special configurations, file `config.xml`
+## 2.3. Special configurations, file `config.xml`
 
 A minimal set of `config.xml` will be installed automatically by the
 setup wizard. Here you may define your specific holidays.
 
-# Secure http connection (SSL/https)
+# 3. Secure http connection (SSL/https)
 
 The recommended way of setting up ProjectForge is to use a reverse proxy
 to do the SSL termination.
 
 There are different ways to do so.
 
-## Using built-in functionality
+## 3.1. Using built-in functionality
 
 Without nginx, Apache etc. you may use the ProjectForge’s built-in
 functionalities, see e. g.
 <https://www.baeldung.com/spring-boot-https-self-signed-certificate>
 
-## Nginx
+## 3.2. Nginx
 
-### Prepare
+### 3.2.1. Prepare
 
 All of the commands below should be run with `root` privileges.
 
@@ -312,7 +306,7 @@ All of the commands below should be run with `root` privileges.
 
 2.  `$ htpasswd -c /etc/nginx/.htpasswd projectforge`
 
-### Configure Nginx
+### 3.2.2. Configure Nginx
 
 To use NGINX as a reverse proxy, it’s necessary to create a
 configuration file. The standard path for NGINX configurations is
@@ -334,11 +328,11 @@ can be done by using the following command:
 
     $ ln -sv /etc/nginx/sites-available/projectforge /etc/nginx/sites-enabled/projectforge
 
-## Apache httpd
+## 3.3. Apache httpd
 
 to be defined.
 
-# Using CardDAV and WebDAV with Milton
+# 4. Using CardDAV and WebDAV with Milton
 
 Place files `milton.license.properties` and `milton.license.sig` to
 directory `~/ProjectForge/resources/milton/` and start ProjectForge with
@@ -346,7 +340,7 @@ loader path:
 
     ${JAVA} ... -Dloader.path=${HOME}/ProjectForge/resources/milton ${DEBUGOPTS} -jar projectforge-application.jar &
 
-# Start ProjectForge (without docker)
+# 5. Start ProjectForge (without docker)
 
 1.  Start ProjectForge server (e.g. on `http://localhost:8080`, update
     the NGINX config if you use another port).
@@ -365,7 +359,7 @@ a
     -   Example stop script:
         [stopProjectForge.sh](misc/stopProjectForge.sh)
 
-# Adding external plugins
+# 6. Adding external plugins
 
 ProjectForge supports external 3rd party plugins: 1. Place your jars e.
 g. in `/home/kai/ProjectForge/plugins` 2. Tell ProjectForge where it is.
@@ -376,15 +370,15 @@ variable before starting ProjectForge:
 activate the plugin as admin in the ProjectForge’s web app under menu
 Admin→plugins. 4. Restart ProjectForge.
 
-# Backups
+# 7. Backups
 
-## JCR
+## 7.1. JCR
 
 Attachments will be handled through the built-in JCR module. The backups
 are placed in `ProjectForge/backup`, the daily backups will purged after
 30 days keeping each first monthly backup.
 
-## DB backup
+## 7.2. DB backup
 
 You may configure a purge job in `projectforge.properties`:
 
@@ -400,7 +394,7 @@ format in its file name. Daily backups (not monthly) will be deleted
 after 30 days. Refer config file for all options:
 \[<https://github.com/micromata/projectforge/blob/develop/projectforge-business/src/main/resources/application.properties>\]
 
-# Supported Java versions
+# 8. Supported Java versions
 
 <table>
 <caption>Java Compability (2021/04/12)</caption>
@@ -470,8 +464,6 @@ after 30 days. Refer config file for all options:
 </tr>
 </tbody>
 </table>
-
-Java Compability (2021/04/12)
 
 <table>
 <caption>Legend</caption>

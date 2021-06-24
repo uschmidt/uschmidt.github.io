@@ -16,7 +16,7 @@ baseurl:            ""
 permalink:          /:title/
 
 # Site base hostname & protocol, e.g. http://example.com
-url:                ""
+url:                https://uschmidt.github.io
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
 logo:               logo_projectforge.gif  
@@ -72,18 +72,18 @@ authors:
 
 # Social icons displayed in footer
 social:
-    email:
-    website:
+    email:          
+    website:        https://projectforge.org
     facebook:       https://www.facebook.com/pages/Micromata/303133633035
     flickr:
     dribbble:
-    github:
+    github:         https://github.com/micromata/projectforge
     googleplus:
-    instagram:      https://www.instagram.com/
+    instagram:      https://www.instagram.com/micromata/
     linkedin:
     pinterest:
     twitter:        https://twitter.com/micromata
-    vimeo:          https://vimeo.com/
+    vimeo:          https://vimeo.com/user44553474
     youtube:
 
 # Share button
@@ -95,7 +95,7 @@ share:
 
 # Default footer image settings
 footer:
-    copyright:      Made by <a href="https://projectforge.org/">ProjectForge</a> in Kassel.
+    copyright:      <a href="https://projectforge.org/">ProjectForge&copy</a> is a registered trade mark.
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
 # disqus:

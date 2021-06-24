@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Imprint
-width: small
+width: xsmall
 permalink: /misc/imprint.html
 ---
 
@@ -24,7 +24,7 @@ Marie-Calm-Straße 1-5<br>
 34131 Kassel
 
 ### Kontakt
-Web: www.projectforge.org<br>
+Web: [www.projectforge.org](www.projectforge.org)<br>
 E-Mail: k.reinhard at micromata.com
 
 Tel: +49 561 31 67 93-0<br>
