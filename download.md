@@ -12,44 +12,42 @@ permalink: /download/
 An auto-update mechanism for the data-base on start-up of the web app is included for all previous public versions: Convenientupdates.
 
 <table>
-	<thead>
-		<tr>
-			<th>Type</th>
-			<th>Link</th>
-			<th>Size</th>
-			<th>Description</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Windows / MacOS X / Other</td>
-			<td><a href="https://sourceforge.net/projects/pforge/files/ProjectForge/" target="_blank">ProjectForge-application-X.X.X.jar</a></td>
-			<td>130MB</td>
-			<td>Executable java archive</td>
-		</tr>
-		<tr>
-			<td>Docker hub</td>
-			<td><a href="https://hub.docker.com/repository/docker/kreinhard/projectforge" target="_blank">Docker images</a></td>
-			<td>530MB</td>
-			<td>Docker images for running as single container as well as docker compose stack.</td>
-		</tr>
-		<tr>
-			<td>Sources</td>
-			<td><a href="https://github.com/micromata/projectforge" target="_blank">Sources on Github</a></td>
-			<td>-</td>
-			<td>All sources for own development.</td>
-		</tr>
-		<tr>
-			<td></td>
-		</tr>
-	</tbody>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Link</th>
+      <th>Size</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Windows / MacOS X / Other</td>
+      <td><a href="https://sourceforge.net/projects/pforge/files/ProjectForge/" target="_blank">ProjectForge-application-X.X.X.jar</a></td>
+      <td>130MB</td>
+      <td>Executable java archive</td>
+    </tr>
+    <tr>
+      <td>Docker hub</td>
+      <td><a href="https://hub.docker.com/repository/docker/kreinhard/projectforge" target="_blank">Docker images</a></td>
+      <td>530MB</td>
+      <td>Docker images for running as single container as well as docker compose stack.</td>
+    </tr>
+    <tr>
+      <td>Sources</td>
+      <td><a href="https://github.com/micromata/projectforge" target="_blank">Sources on Github</a></td>
+      <td>-</td>
+      <td>All sources for own development.</td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
 </table>
-
 
 ### Source code at GitHub
 
-You can also check out the source code from GitHub:
-https://github.com/micromata/projectforge
+You can also check out the source code from [GitHub](https://github.com/micromata/projectforge)
  
 ## Convenient updates
 
@@ -93,7 +91,7 @@ Use one of the following translation files as template:
 - [I18nResources.properties](https://github.com/micromata/projectforge/blob/master/projectforge-business/src/main/resources/I18nResources.properties}: The English (default) translation file.
 - [I18nResources_de.properties](https://github.com/micromata/projectforge/blob/master/projectforge-business/src/main/resources/I18nResources_de.properties): The German translation file.
 
-Put the translation file to the path: src/main/resources
+Put the translation file to the path:`src/main/resources`.
 Please send any translation file to k.reinhard at me.com, so it'll be part of the next distribution.
 For any newer version of ProjectForge you'll get a list of new translations not yet available in your language (please refer the system administration menu).
 
