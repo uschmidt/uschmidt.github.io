@@ -7,7 +7,7 @@ permalink: /download/
 
 ## Community Edition
 
-This community edition is full-featured and for free, there are no limitations! 
+<p class="uk-text-lead">This community edition is full-featured and for free, there are no limitations!</p>
 
 An auto-update mechanism for the data-base on start-up of the web app is included for all previous public versions: Convenientupdates.
 
@@ -51,7 +51,9 @@ An auto-update mechanism for the data-base on start-up of the web app is include
 You can also check out the source code from GitHub:
 https://github.com/micromata/projectforge
  
-## Convenient updates - Updates through simple clicks
+## Convenient updates
+
+<p class="uk-text-lead">Updates through simple clicks</p>
 
 ProjectForge provides a very convenient method for updating your ProjectForge installation. Since version 6 any required updates or migrations will be done automatically by simply starting a new version.
 
@@ -62,7 +64,7 @@ If you need to update versions older 6, you'll need to download the latest versi
 
 ## Translation files
 
-ProjectForge is 100% internationalized. Enable new languages by simply editing the translation file.
+<p class="uk-text-lead">ProjectForge is 100% internationalized. Enable new languages by simply editing the translation file.</p>
 
 Currently ProjectForge is available in the languages English and German. For enabling a new language you only need to enter your translations in the translation text file. Please choose one of the existing language files which you will use as a template for your translations. Please leave the i18n key untouched and change the translation right to the '=' character.
 This is the format of a translation file:
@@ -96,8 +98,6 @@ Please send any translation file to k.reinhard at me.com, so it'll be part of th
 For any newer version of ProjectForge you'll get a list of new translations not yet available in your language (please refer the system administration menu).
 
 ## Archive
-
-
 
 <table>
   <thead>
