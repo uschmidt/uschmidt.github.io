@@ -38,9 +38,9 @@ right:
     url: /changelog/
     button: primary-outline
 
-  # - title: Contact
-  # url: /contact/
-  # button: success
+  - title: Download
+    url: /contact/
+    button: success
 
   # - title: Changelog
   #   url: /contact/
