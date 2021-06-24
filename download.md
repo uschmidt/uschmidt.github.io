@@ -102,10 +102,10 @@ For any newer version of ProjectForge you'll get a list of new translations not 
 <table>
   <thead>
     <tr>
-      <td>Date</td>
-      <td>Link</td>
-      <td>Size</td>
-      <td>Platform</td>
+      <th>Date</th>
+      <th>Link</th>
+      <th>Size</th>
+      <th>Platform</th>
     </tr>
   </thead>
   <tbody>
