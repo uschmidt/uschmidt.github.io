@@ -41,3 +41,17 @@ An auto-update mechanism for the data-base on start-up of the web app is include
 </tr></tbody>
 </table>
 
+
+### Source code at GitHub
+
+You can also check out the source code from GitHub:
+https://github.com/micromata/projectforge
+ 
+## Convenient updates - Updates through simple clicks
+
+ProjectForge provides a very convenient method for updating your ProjectForge installation. Since version 6 any required updates or migrations will be done automatically by simply starting a new version.
+
+Some versions need manual updates (e. g. of config files): [Migration](https://github.com/micromata/projectforge/blob/develop/doc/migration.adoc).
+
+If you need to update versions older 6, you'll need to download the latest version 5 and use the older update mechanism by simply clicking through the updates.
+
