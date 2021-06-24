@@ -1,5 +1,5 @@
 ---
-title: Datev import: An internal error occurs while importing plenty of accounting entries.
+title: Datev import - An internal error occurs while importing plenty of accounting entries.
 categories: [financial]
 ---
 
