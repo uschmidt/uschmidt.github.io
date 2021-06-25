@@ -1,11 +1,9 @@
-= ProjectForge development documentation
-Micromata GmbH, Version {version}
-:toc:
-:toclevels: 4
-
-:last-update-label: Copyright (C) 2021, Last updated
-
-## How to deploy a new release?
+---
+title: Deployment
+subtitle: How to deploy a new release?
+author: kai
+tags: [deployment]
+---
 
 1. Modify NEWS.md with updated release informations
 2. Define new release variable: +
