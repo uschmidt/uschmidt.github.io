@@ -10,8 +10,8 @@ But there are some really small changes e. g. in config files etc. which have to
 Version 6.x to version 7
 
 1. Configurationparameters changed
-  a) `config.xml:holiday.month` is now 1-based (1 - January, ..., 12 - December), was 0-based.
-  b) `projectforge.properties:projectforge.defaultFirstDayOfWeek=MONDAY` (full name of weekday: SUNDAY, ...)
+  a. `config.xml:holiday.month` is now 1-based (1 - January, ..., 12 - December), was 0-based.
+  b. `projectforge.properties:projectforge.defaultFirstDayOfWeek=MONDAY` (full name of weekday: SUNDAY, ...)
 
 2. Configuration parameters moved from `config.xml` to `projectforge.properties`
 .. `config.xml:currencySymbol` -> `projectforge.properties:projectforge.currencySymbol=€`
