@@ -1,6 +1,6 @@
 ---
 layout: page
-width: small
+width: xsmall
 title: About
 permalink: /about/
 ---
