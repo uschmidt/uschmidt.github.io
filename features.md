@@ -1,8 +1,9 @@
 ---
 layout: page
 width: small
-title: Features
-subtitle: ProjectForge is developed as a professional and secure Software. A lot of features make your project management and daily work much easier!
+hero:
+    title: Features
+    subtitle: ProjectForge is developed as a professional and secure Software. A lot of features make your project management and daily work much easier!
 permalink: /features/
 ---
 
