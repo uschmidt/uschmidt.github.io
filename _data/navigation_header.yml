@@ -15,6 +15,12 @@ left:
 
       - title: Installation
         url: /docs/installation/
+        
+      - title: Deployment
+        url: /docs/deployment/
+      
+      - title: Technologies
+        url: /docs/technologies/
     
   - title: FAQ
     url: /misc/faq
