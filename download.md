@@ -1,6 +1,6 @@
 ---
 layout: page
-width: xsmall
+width: small
 title: Download
 permalink: /download/
 ---
