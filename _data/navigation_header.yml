@@ -3,6 +3,9 @@
 left:
   - title: Home
     url: /
+    
+  - title: Features
+    url: /Features/
 
   - title: Docs
     dropdown:
