@@ -15,6 +15,9 @@ left:
     
   - title: FAQ
     url: /misc/faq
+    
+  - title: About
+    url: /about/
 
   # - title: Blog
   # url: /blog/
