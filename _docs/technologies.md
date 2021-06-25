@@ -52,8 +52,6 @@ Java 8 might work also with ProjectForge 7, but OpenJDK 11 is recommended (teste
 
 ## Technologies
 
-
-
 <table>
    <thead>
       <tr>
@@ -78,57 +76,57 @@ Java 8 might work also with ProjectForge 7, but OpenJDK 11 is recommended (teste
          <td>Spring</td>
          <td>Boot Application</td>
       </tr>
-      <tr class="row_5 odd">
-         <td class="col_0 col_first">Wicket / React</td>
-         <td class="col_1 col_last">Web framework Wicket will be replaced by React.</td>
+      <tr>
+         <td>Wicket / React</td>
+         <td>Web framework Wicket will be replaced by React.</td>
       </tr>
-      <tr class="row_6 even">
-         <td class="col_0 col_first">JCR</td>
-         <td class="col_1 col_last">JackRabbit for document storage (used by data transfer tool and others)</td>
+      <tr>
+         <td>JCR</td>
+         <td>JackRabbit for document storage (used by data transfer tool and others)</td>
       </tr>
-      <tr class="row_7 odd">
-         <td class="col_0 col_first">FOP</td>
-         <td class="col_1 col_last">For the creation of PDFs, e. g. the user time sheets, monthly employee reports etc.</td>
+      <tr>
+         <td>FOP</td>
+         <td>For the creation of PDFs, e. g. the user time sheets, monthly employee reports etc.</td>
       </tr>
-      <tr class="row_8 even">
-         <td class="col_0 col_first">JUnit</td>
-         <td class="col_1 col_last">Test framework</td>
+      <tr>
+         <td>JUnit</td>
+         <td>Test framework</td>
       </tr>
-      <tr class="row_9 odd">
-         <td class="col_0 col_first">Jenkins</td>
-         <td class="col_1 col_last">CI - continouos integration system</td>
+      <tr>
+         <td>Jenkins</td>
+         <td>CI - continouos integration system</td>
       </tr>
-      <tr class="row_10 even">
-         <td class="col_0 col_first">Groovy/Kotlin Script</td>
-         <td class="col_1 col_last">Used for scripting ProjectForge for reports (MS Excel exports, charting etc.) as well as for e-mail templating (see AdministrationGuide for further information).</td>
+      <tr>
+         <td>Groovy/Kotlin Script</td>
+         <td>Used for scripting ProjectForge for reports (MS Excel exports, charting etc.) as well as for e-mail templating (see AdministrationGuide for further information).</td>
       </tr>
-      <tr class="row_11 odd">
-         <td class="col_0 col_first">Jasperreports</td>
-         <td class="col_1 col_last">For generating reports.</td>
+      <tr>
+         <td>Jasperreports</td>
+         <td>For generating reports.</td>
       </tr>
-      <tr class="row_12 even">
-         <td class="col_0 col_first">JFreeChart</td>
-         <td class="col_1 col_last">For internal graphics and diagrams as well as for usage in the groovy scriptlets by the users, e. g. for reports.</td>
+      <tr>
+         <td>JFreeChart</td>
+         <td>For internal graphics and diagrams as well as for usage in the groovy scriptlets by the users, e. g. for reports.</td>
       </tr>
-      <tr class="row_13 odd">
-         <td class="col_0 col_first">Maven3</td>
-         <td class="col_1 col_last">Building system, testing, staging and Jar-management.</td>
+      <tr>
+         <td>Maven3</td>
+         <td>Building system, testing, staging and Jar-management.</td>
       </tr>
-      <tr class="row_14 even">
-         <td class="col_0 col_first">Powermock</td>
-         <td class="col_1 col_last">For using mock objects in JUnit-tests</td>
+      <tr>
+         <td>Powermock</td>
+         <td>For using mock objects in JUnit-tests</td>
       </tr>
-      <tr class="row_15 odd">
-         <td class="col_0 col_first">MPXJ</td>
-         <td class="col_1 col_last">For exporting MS-Project plans: MPXJ home page</td>
+      <tr>
+         <td>MPXJ</td>
+         <td>For exporting MS-Project plans: MPXJ home page</td>
       </tr>
-      <tr class="row_16 even">
-         <td class="col_0 col_first">POI</td>
-         <td class="col_1 col_last">For the creation and manipulation of Excel files (also supported in the user scripts).</td>
+      <trZ>
+         <td>POI</td>
+         <td>For the creation and manipulation of Excel files (also supported in the user scripts).</td>
       </tr>
-      <tr class="row_17 row_last odd">
-         <td class="col_0 col_first">SVG (batik)</td>
-         <td class="col_1 col_last">For drawing Gantt diagrams</td>
+      <tr>
+         <td>SVG (batik)</td>
+         <td>For drawing Gantt diagrams</td>
       </tr>
    </tbody>
 </table>
