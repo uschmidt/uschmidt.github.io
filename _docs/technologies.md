@@ -55,8 +55,8 @@ Java 8 might work also with ProjectForge 7, but OpenJDK 11 is recommended (teste
 <table>
    <thead>
       <tr>
-         <td>Technology</td>
-         <td>Usage</td>
+         <th>Technology</th>
+         <th>Usage</th>
       </tr>
    </thead>
    <tbody>
