@@ -7,9 +7,9 @@ hero:
 permalink: /features/
 ---
 
-Its modern architecture is very scalable and uses encrypted communication for usage over the Internet.<br>
-You can start ProjectForge as a small installation (as executable for Windows, Mac or Linux) and migrate it later, if needed, on a server farm.<br>
-Your users only need a modern Internet browser. There is no need to install anything on the user's client.<br>
+Its modern architecture is very scalable and uses encrypted communication for usage over the Internet. You can start ProjectForge as a small installation (as executable for Windows, Mac or Linux) and migrate it later, if needed, on a server farm.
+
+Your users only need a modern Internet browser. There is no need to install anything on the user's client.
 
 ## Main features
 
