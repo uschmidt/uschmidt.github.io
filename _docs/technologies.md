@@ -29,20 +29,20 @@ ProjectForge is characterized by a rapid application development approach.
 
 This means:
 
-    - Write the entity as Java beans and define the data base mapping with annotations (JPA)
-    - Write simple html pages (Wicket / React)
-    - Write the business logic in Java/Kotlin (not in jsp or something comparable)
-    - Derive ui classes (list and edit forms) from the base classes.
-    - Derive data access objects from the base objects (security, access management, persistancy).
+- Write the entity as Java beans and define the data base mapping with annotations (JPA)
+- Write simple html pages (Wicket / React)
+- Write the business logic in Java/Kotlin (not in jsp or something comparable)
+- Derive ui classes (list and edit forms) from the base classes.
+- Derive data access objects from the base objects (security, access management, persistancy).
 
 The mission:
 Develop entities of new functionalities with lists and edit screens in just a few hours!
 
-    - Secure access checking
-    - Fully indexed (search)
-    - History of every user's modifications
-    - Full data base support
-    - Support of object oriented html pages and components (powered by Wicket)!
+- Secure access checking
+- Fully indexed (search)
+- History of every user's modifications
+- Full data base support
+- Support of object oriented html pages and components (powered by Wicket)!
 
 An established developer should focus on the essentials!
 
