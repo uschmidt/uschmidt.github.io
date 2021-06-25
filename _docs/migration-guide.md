@@ -7,7 +7,7 @@ tags: [migration]
 
 But there are some really small changes e. g. in config files etc. which have to be done manually, as described below.
 
-Version 6.x to version 7
+### Version 6.x to version 7
 
 1. Configurationparameters changed
     1. `config.xml:holiday.month` is now 1-based (1 - January, ..., 12 - December), was 0-based.
