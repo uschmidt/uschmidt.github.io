@@ -9,6 +9,15 @@ But there are some really small changes e. g. in config files etc. which have to
 
 Version 6.x to version 7
 
+1. First item
+2. Second item
+3. Third item
+    1. Indented item
+    2. Indented item
+4. Fourth item 
+
+
+
 1. Configurationparameters changed
   1.1. `config.xml:holiday.month` is now 1-based (1 - January, ..., 12 - December), was 0-based.
   1.2. `projectforge.properties:projectforge.defaultFirstDayOfWeek=MONDAY` (full name of weekday: SUNDAY, ...)
