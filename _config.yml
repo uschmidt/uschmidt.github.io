@@ -5,9 +5,9 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site title and description
-title:              ProjectForge
-description:        ProjectForge Documentation.
-lang:               en
+title:              Micromata Weihnachten 2021
+description:        Ein Weihnachtsgruß von Micromata
+lang:               de
 
 # Site subpath, e.g. /blog
 baseurl:            ""
@@ -16,99 +16,91 @@ baseurl:            ""
 permalink:          /:title/
 
 # Site base hostname & protocol, e.g. http://example.com
-url:                https://uschmidt.github.io
+url:                ""
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
-logo:               logo_projectforge.gif  
+logo:               signet-micromata.svg
 
 navbar:
-    sticky:         true
-    search:         true
-  
+  sticky:         true
+  search:         false
+
 # Default author settings
 author:
-    name:           Kai Reinhard
-    title:          Architect, Lead Developer  
-    avatar:         avataaars.png
+  name:           Micromata GmbH
+  title:          Micromata GmbH
+  avatar:
 
-# Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
-authors:
-    kai:
-      name:         Kai Reinhard
-      title:        Architect, Developer     
-      avatar:       kai.png
-    wolfgang:
-      name:         Wolfgang Jung
-      title:        Architect, Developer     
-      avatar:       avataaars.png
-    christian:
-      name:         Christian Claus
-      title:        Developer    
-      avatar:       avataaars.png
-    daniel:
-      name:         Daniel Ludwig
-      title:        Developer     
-      avatar:       avataaars.png
-    roger:
-      name:         Roger Kommer
-      title:        Developer     
-      avatar:       avataaars.png
-    christiant:
-      name:         Christian Tausenfreund
-      title:        Developer      
-      avatar:       avataaars.png
-    stefan:
-      name:         Stefan Niemczyk
-      title:        Developer     
-      avatar:       avataaars.png
-    jan:
-      name:         Jan Brümmer
-      title:        Developer     
-      avatar:       avataaars.png
-    johann:
-      name:         Johann Feeser
-      title:        Developer     
-      avatar:       avataaars.png
+# Team settings
+teams:
+  GL:
+    name:         GL
+    # This has to be the name of the /uploads subfolder as well as the playlist and TS files!
+    # My recommendation: just name the video and folder after the team.
+    video:        test1
+  merck:
+    name:         Merck
+    video:        test1
+  dhl-vls:
+    name:         DHL VLS
+    video:        test1
+  viessmann:
+    name:         Viessmann
+    video:        test1
+  porsche-dpp:
+    name:         Porsche DPP
+    video:        test1
+  dhl-nolp:
+    name:         DHL NOLP
+    video:        test1
+  vw-werbung:
+    name:         Porsche DPP
+    video:        test1
+  porsche-iris:
+    name:         Porsche IRIS
+    video:        test1
+  polyas:
+    name:         POLYAS
+    video:        test1
+  wingas:
+    name:         WINGAS
+    video:        test1
+  vw-pricing:
+    name:         VW Pricing
+    video:        test1
+  dhl-pka:
+    name:         DHL PKA
+    video:        test1
+  dhl-of:
+    name:         DHL OF
+    video:        test1
 
 # Social icons displayed in footer
 social:
-    email:          
-    website:        https://projectforge.org
-    facebook:       https://www.facebook.com/pages/Micromata/303133633035
-    flickr:
-    dribbble:
-    github:         https://github.com/micromata/projectforge
-    googleplus:
-    instagram:      https://www.instagram.com/micromata/
-    linkedin:
-    pinterest:
-    twitter:        https://twitter.com/micromata
-    vimeo:          https://vimeo.com/user44553474
-    youtube:
-
-# Share button
-share:
-    post:           false # Display share buttons on a post page
-    doc:            false # Display share buttons on a doc page
-    twitter:        username # Enable by adding Twitter handle 
-    facebook:       false # Enable by setting true (Facebook handle not required)
+  email:
+  website:        https://micromata.de
+  facebook:       https://www.facebook.com/
+  instagram:      https://www.instagram.com/micromata/
+  twitter:        https://twitter.com/micromata
+  vimeo:          https://vimeo.com/user44553474
+  youtube:
 
 # Default footer image settings
 footer:
-    copyright:      <a href="https://projectforge.org/">ProjectForge&copy</a> is a registered trade mark.
+  copyright:      <a href="https://micromata.de/">&copy; Micromata GmbH</a>
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
-# disqus:
-    # shortname:      # 1234
+disqus:
+  shortname:      # 1234
 
 # Google analytics code, get your code here https://www.google.com/analytics/
-# google_analytics:
+#google_analytics:
 
 # Number of posts displayed on blog page
-paginate:           10
+# paginate:           10
 
 # Blog path
-paginate_path:      "/blog/:num/"
+# paginate_path:      "/blog/:num/"
 
 # Path to post content assets directory i.e post images, pdfs etc
 uploads:            /uploads/
@@ -122,10 +114,22 @@ gems:
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-avatar
+
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
+  - .idea
+  - README.md
+  - convert-video.sh
+include:
+  - /node_modules/video.js/dist/video-js.min.css
+  - /node_modules/video.js/dist/video.min.js
+  - /node_modules/videojs-contrib-dash/dist/videojs-dash.min.js
+  - /node_modules/dashjs/dist/dash.all.min.js.map
+  - /node_modules/dashjs/dist/dash.all.min.js
+  - /node_modules/uikit/dist/js/uikit.min.js
+  - /node_modules/uikit/dist/js/uikit-icons.min.js
 
 sass:
   style:            compressed

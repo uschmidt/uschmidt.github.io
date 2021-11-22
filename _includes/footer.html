@@ -1,8 +1,8 @@
-<footer class="uk-section uk-text-center uk-text-muted">
-    <div class="uk-container uk-container-small">
+<footer class="uk-section uk-text-muted">
+    <div class="uk-container">
 
-        <div>
-            <ul class="uk-subnav uk-flex-center">
+        <div class="uk-flex uk-flex-between">
+            <ul class="uk-subnav">
                 {% for link in site.data.navigation_footer %}
                     {% if link.url contains 'http' %}
                         {% assign domain = '' %}
@@ -19,13 +19,9 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        </div>
-        <div class="uk-margin-medium">
-            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-grid">
                 {% include social-networks.html %}
             </div>
         </div>
-        <div class="uk-margin-medium uk-text-small copyright link-secondary">{{ site.footer.copyright }}</div>
-
     </div>
 </footer>

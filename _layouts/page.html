@@ -1,23 +1,22 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "de" }}">
 
-{% if page.width == 'expand' %}
-    {{ content }}
+{% include head.html %}
+
+<body>
+
+{% if page.hero %}
+{% include hero.html %}
 {% else %}
-<div class="uk-section">
-    <div class="uk-container{% if page.width %} uk-container-{{page.width}}{% endif %}">
-
-        <article class="uk-article">
-
-            <h1 class="uk-article-title">{{ page.title | escape }}</h1>
-
-            <div class="article-content link-primary">
-                {{ content }}
-            </div>
-
-        </article>
-
-    </div>
-</div>
+{% include navbar.html %}
 {% endif %}
+
+{{ content }}
+
+{% if page.layout != 'doc' %}
+{% include footer.html %}
+{% endif %}
+
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+// Own ProjectForge Styles
+// ========================================================================
+
+// Scaffolidng
+
+body {
+  font-family: Montserrat,sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #50555f;
+}
+
+// Typo etc.
+
+article a,
+article .uk-link,
+.uk-button.uk-button-text {
+  color: #50a53c !important;
+  border-bottom: none !important;
+
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.uk-list.link-secondary {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+// Navbar
+
+.uk-navbar-item.uk-logo img {
+  width: 220px !important;
+}
+
+.uk-navbar-nav > li {
+  > a {
+    font-size: 18px;
+    font-weight: 500 !important;
+    color: #444;
+
+    &:hover {
+      color: #009ba3;
+    }
+  }
+
+  &.uk-active a {
+    color: #444;
+  }
+}
+
+.uk-navbar-sticky {
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+// Footer
+footer {
+  .uk-subnav > * {
+    line-height: 2.1;
+
+    > :first-child {
+      font-size: 16px;
+    }
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: #000;
+    opacity: 0.7;
+  }
+}
+
+// Hero
+
+.section-hero {
+  .uk-heading-primary {
+    font-size: 40px;
+  }
+
+  .uk-text-lead {
+    font-size: 18px;
+  }
+}
+
+
+// Navbar
+
+.uk-navbar-item.uk-logo img {
+  width: 90px;
+}
+
+.uk-card.uk-card-default p {
+  font-size: 16px;
+}
+
+.uk-navbar-dropdown {
+  padding: 10px 20px;
+  top: 60px !important;
+}
+
+.uk-navbar-nav > li > a {
+  font-weight: 700;
+}
+
+.uk-navbar-nav > li > a[href*="#"]:after {
+  content: "›";
+  font-size: 30px;
+  rotate: 90deg;
+  padding: 0 10px;
+  margin-top: 3px;
+}
+
+.uk-navbar-container > .uk-container .uk-navbar-right {
+  min-height: 60px;
+}
+
+.uk-container-xsmall {
+  h4 {
+    margin-bottom: 10px;
+  }
+}
+
+// Hero
+
+p.uk-text-lead {
+  line-height: 1.8;
+}
+
+p.hero-image {
+  margin-top: 30px;
+
+  img {
+    max-height: 345px;
+  }
+}
+
+// Buttons
+
+a.uk-button.uk-button-primary-outline {
+  padding: 14px 20px !important;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  border-radius: 4px !important;
+  border-bottom: 1px solid #50a53c !important;
+}
+
+
+// Sections
+
+.mm-stage {
+  background: #E9E3D7;
+  background-image: url("/uploads/background-tile-dark.png");
+  background-position: 0 0;
+  background-size: auto;
+  background-repeat: repeat;
+}
+
+.mm-bg-light {
+  background: #E9E3D7;
+  background-image: url("/uploads/background-tile-light.png");
+  background-position: 0 0;
+  background-size: auto;
+  background-repeat: repeat;
+}
+
+// Card
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  height: 439px;
+  width: 780px;
+  //position: absolute;
+  margin: auto;
+  //left: 0;
+  //right: 0;
+  //top: 0;
+  //bottom: 0;
+  cursor: pointer;
+  transition: 2s;
+  -webkit-perspective: 4000px;
+  perspective: 4000px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 500px;
+    height: 280px;
+  }
+
+  .section-hero {
+    h1.uk-heading-primary,
+    .uk-h1 {
+      font-size: 26px;
+    }
+
+    .uk-text-lead {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .uk-h1 {
+    font-size: 26px;
+  }
+
+  .uk-text-lead {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 400px;
+    height: 225px;
+  }
+}
+
+@media (max-width: 375px) {
+
+  .card {
+    width: 350px;
+    height: 197px;
+  }
+
+  .section-hero {
+    h1.uk-heading-primary,
+    .uk-h1 {
+      font-size: 22px;
+    }
+
+    .uk-text-lead {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .uk-h1 {
+    font-size: 22px;
+  }
+
+  .uk-text-lead {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.card:hover{
+  transform: rotate(-2deg);
+
+  @media (max-width: 375px) {
+    transform: rotate(0deg);
+  }
+}
+
+.card:hover .outside{
+  transform: rotateY(-130deg);
+}
+
+.outside{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0.1%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: 2s;
+  transform-origin: left;
+  z-index: 10000;
+
+  p {
+    font-size: 50px;
+    text-align: center;
+    color: #FFF;
+    font-family: Georgia, serif;
+    margin-top: 30%;
+
+    span {
+      display: block;
+      font-size: 20px;
+    }
+  }
+}
+
+.front,.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /*hide backface in firefox*/
+  transform: rotateX(0deg);
+}
+
+.front {
+  background-color: #003439;
+  z-index: 1;
+}
+
+.back {
+  background: linear-gradient(
+        to right,
+        #003439 50%,
+        #001C20
+  );
+  transform: rotateY(180deg);
+  background-image: url("/uploads/card-inside-left.png");
+  background-position: 0 0;
+  background-size: auto;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  box-shadow: -129px 0px 90px -64px rgba(0,0,0,0.51) inset;
+}
+
+.inside{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0%;
+  background: #003439;
+  padding: 30px 50px;
+  box-shadow: 25px 25px 35px rgba(0,0,0,0.3);
+}
+
+
+// Video Player Styles
+
+@import "movie";
+
+.video-js {
+  height: 100%;
+  box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.6);
+}
+
+.vjs-poster {
+  background-color: none !important;
+  //background-image: url("/uploads/card-back.png") !important;
+}

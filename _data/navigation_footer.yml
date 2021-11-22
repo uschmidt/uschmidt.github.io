@@ -1,19 +1,10 @@
 # Footer navigation links
 
-- title: Home
-  url: /
-  
-- title: Terms Of Use
-  url: /misc/terms-of-use
-  
-- title: Imprint
-  url: /misc/imprint
+- title: © Micromata GmbH
+  url: https://www.micromata.de/
 
-- title: Privacy Policy
-  url: /misc/privacy-policy
+- title: Impressum
+  url: https://www.micromata.de/impressum/
 
-# - title: Blog
-  # url: /blog/
-
-# - title: Contact
-  # url: /contact/
+- title: Datenschutz
+  url: https://www.micromata.de/datenschutz/
