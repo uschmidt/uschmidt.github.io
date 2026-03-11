@@ -197,6 +197,26 @@
 	.cosmetics-btn.visible {
 		display: inline-block;
 	}
+
+	@media (max-width: 640px) {
+		body {
+			padding: 3.5rem 1rem 4rem;
+		}
+
+		.balance {
+			top: 1.2rem;
+			right: 1.2rem;
+		}
+
+		.back-btn {
+			bottom: 1.2rem;
+			right: 1.2rem;
+		}
+
+		.offer-title {
+			font-size: 1.3rem;
+		}
+	}
 </style>
 </head>
 <body>
@@ -213,7 +233,7 @@
 
 <div class="balance" id="balance"></div>
 
-<a class="back-btn" href="counter.html" aria-label="Zurück">
+<a class="back-btn" href="index.html" aria-label="Zurück">
 	<svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
 </a>
 

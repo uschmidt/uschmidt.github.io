@@ -700,6 +700,62 @@
 		transform: translateX(-50%) translateY(0);
 		pointer-events: auto;
 	}
+
+	@media (max-width: 640px) {
+		.shop-btn {
+			bottom: 1.2rem;
+			right: 1.2rem;
+			font-size: 0.8rem;
+			padding: 0.5rem 1.2rem;
+		}
+
+		.reset-btn {
+			bottom: 1.2rem;
+			left: 1.2rem;
+			font-size: 0.7rem;
+			padding: 0.4rem 0.8rem;
+		}
+
+		.dark-toggle {
+			top: 1.2rem;
+			right: 1.2rem;
+			width: 2.2rem;
+			height: 2.2rem;
+		}
+
+		.auto-clicker-btn {
+			top: 1.2rem;
+			left: 1.2rem;
+			font-size: 0.7rem;
+			padding: 0.4rem 0.8rem;
+		}
+
+		.highscore {
+			top: 3.8rem;
+			left: 1.2rem;
+			font-size: 0.7rem;
+		}
+
+		.timer {
+			top: 5.2rem;
+			left: 1.2rem;
+			font-size: 0.7rem;
+		}
+
+		.notification {
+			top: 3.8rem;
+			font-size: 0.75rem;
+			padding: 0.5rem 1rem;
+		}
+
+		.hint {
+			bottom: 4rem;
+		}
+
+		.cheated-label {
+			bottom: 3.8rem;
+		}
+	}
 </style>
 </head>
 <body>
@@ -1497,6 +1553,30 @@
 	});
 
 	document.body.addEventListener('mouseup', (e) => {
+		if (autoClickerEnabled && autoClickerInterval) {
+			clearInterval(autoClickerInterval);
+			autoClickerInterval = null;
+		}
+	});
+
+	// Touch support for auto-clicker
+	document.body.addEventListener('touchstart', (e) => {
+		if (e.target.closest('#shopBtn, #resetBtn, #darkToggle, #autoClickerBtn, #endWurst')) return;
+		if (autoClickerEnabled && !autoClickerInterval) {
+			autoClickerInterval = setInterval(() => {
+				increment();
+			}, 50);
+		}
+	}, { passive: true });
+
+	document.body.addEventListener('touchend', () => {
+		if (autoClickerEnabled && autoClickerInterval) {
+			clearInterval(autoClickerInterval);
+			autoClickerInterval = null;
+		}
+	});
+
+	document.body.addEventListener('touchcancel', () => {
 		if (autoClickerEnabled && autoClickerInterval) {
 			clearInterval(autoClickerInterval);
 			autoClickerInterval = null;
