@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klick Zähler</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;500&display=swap" rel="stylesheet">
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html, body {
+		height: 100%;
+		overflow: hidden;
+	}
+
+	body {
+		background: var(--bg);
+		color: var(--fg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'DM Mono', monospace;
+		cursor: pointer;
+		user-select: none;
+		-webkit-user-select: none;
+		transition: background 0.3s ease, color 0.3s ease;
+	}
+
+	:root {
+		--bg: #fff;
+		--fg: #111;
+		--hint: #ccc;
+		--border: #ddd;
+		--border-text: #bbb;
+	}
+
+	body.dark {
+		--bg: #111;
+		--fg: #eee;
+		--hint: #444;
+		--border: #333;
+		--border-text: #555;
+	}
+
+	.counter {
+		font-weight: 300;
+		color: var(--fg);
+		letter-spacing: -0.04em;
+		line-height: 1;
+		transition: font-size 0.3s ease;
+		position: relative;
+		z-index: 1;
+	}
+
+	.counter.plop {
+		animation: plop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	@keyframes plop {
+		0% {
+			transform: scale(1);
+		}
+		30% {
+			transform: scale(1.15);
+		}
+		60% {
+			transform: scale(0.95);
+		}
+		100% {
+			transform: scale(1);
+		}
+	}
+
+	.hint {
+		position: fixed;
+		bottom: 2.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 0.8rem;
+		font-weight: 300;
+		color: var(--hint);
+		letter-spacing: 0.08em;
+		transition: opacity 0.6s ease;
+	}
+
+	.hint.hidden {
+		opacity: 0;
+	}
+
+	.shop-btn {
+		position: fixed;
+		bottom: 2.5rem;
+		right: 2.5rem;
+		background: #2563eb;
+		color: #fff;
+		font-family: 'DM Mono', monospace;
+		font-size: 0.85rem;
+		font-weight: 500;
+		letter-spacing: 0.06em;
+		padding: 0.55rem 1.4rem;
+		border: none;
+		border-radius: 999px;
+		cursor: pointer;
+		transition: background 0.2s ease, transform 0.15s ease;
+		text-decoration: none;
+	}
+
+	.shop-btn:hover {
+		background: #1d4ed8;
+		transform: scale(1.05);
+	}
+
+	.shop-btn:active {
+		transform: scale(0.97);
+	}
+
+	.reset-btn {
+		position: fixed;
+		bottom: 2.5rem;
+		left: 2.5rem;
+		background: none;
+		border: 1px solid var(--border);
+		color: var(--border-text);
+		font-family: 'DM Mono', monospace;
+		font-size: 0.75rem;
+		font-weight: 300;
+		letter-spacing: 0.06em;
+		padding: 0.45rem 1rem;
+		border-radius: 999px;
+		cursor: pointer;
+		transition: color 0.2s ease, border-color 0.2s ease;
+	}
+
+	.reset-btn:hover {
+		color: #e11d48;
+		border-color: #e11d48;
+	}
+
+	.sparkle {
+		position: fixed;
+		border-radius: 50%;
+		pointer-events: none;
+		animation: sparkle-fly 1.2s ease-out forwards;
+	}
+
+	.dark-toggle {
+		position: fixed;
+		top: 2rem;
+		right: 2.5rem;
+		background: none;
+		border: 1px solid var(--border);
+		color: var(--border-text);
+		width: 2.4rem;
+		height: 2.4rem;
+		border-radius: 50%;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: border-color 0.3s ease, color 0.3s ease;
+	}
+
+	.dark-toggle:hover {
+		border-color: var(--fg);
+		color: var(--fg);
+	}
+
+	.dark-toggle svg {
+		width: 1.1rem;
+		height: 1.1rem;
+		fill: none;
+		stroke: currentColor;
+		stroke-width: 2;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		transition: stroke 0.3s ease;
+	}
+
+	.auto-clicker-btn {
+		position: fixed;
+		top: 2rem;
+		left: 2.5rem;
+		background: none;
+		border: 1px solid var(--border);
+		color: var(--border-text);
+		font-family: 'DM Mono', monospace;
+		font-size: 0.75rem;
+		font-weight: 300;
+		letter-spacing: 0.06em;
+		padding: 0.45rem 1rem;
+		border-radius: 999px;
+		cursor: pointer;
+		transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+	}
+
+	.auto-clicker-btn:hover {
+		border-color: var(--fg);
+		color: var(--fg);
+	}
+
+	.auto-clicker-btn.active {
+		background: #ef4444;
+		border-color: #ef4444;
+		color: #fff;
+	}
+
+	.cheater-text {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: 'DM Mono', monospace;
+		font-size: clamp(8rem, 20vw, 16rem);
+		font-weight: 500;
+		color: rgba(239, 68, 68, 0.05);
+		pointer-events: none;
+		z-index: 0;
+		letter-spacing: 0.02em;
+		display: none;
+	}
+
+	.cheater-text.show {
+		display: block;
+	}
+
+	.cheated-label {
+		position: fixed;
+		bottom: 1rem;
+		left: 50%;
+		transform: translateX(-50%);
+		font-family: 'DM Mono', monospace;
+		font-size: 0.7rem;
+		font-weight: 300;
+		color: #999;
+		letter-spacing: 0.04em;
+		opacity: 0.4;
+		pointer-events: none;
+		display: none;
+	}
+
+	.cheated-label.show {
+		display: block;
+	}
+
+	.highscore {
+		position: fixed;
+		top: 5rem;
+		left: 2.5rem;
+		font-family: 'DM Mono', monospace;
+		font-size: 0.75rem;
+		font-weight: 300;
+		color: var(--muted);
+		letter-spacing: 0.04em;
+		opacity: 0.7;
+		pointer-events: none;
+	}
+
+	.highscore-value {
+		color: #f59e0b;
+		font-weight: 500;
+	}
+
+	.timer {
+		position: fixed;
+		top: 6.5rem;
+		left: 2.5rem;
+		font-family: 'DM Mono', monospace;
+		font-size: 0.75rem;
+		font-weight: 300;
+		color: var(--muted);
+		letter-spacing: 0.04em;
+		opacity: 0.7;
+		pointer-events: none;
+	}
+
+	.timer-value {
+		color: #10b981;
+		font-weight: 500;
+	}
+
+	.end-wurst {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) rotate(0deg);
+		width: 200vw;
+		height: 16rem;
+		cursor: pointer;
+		z-index: 10000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-image: url('assets/ahle-wurscht.png');
+		background-size: auto 100%;
+		background-repeat: repeat-x;
+		background-position: center;
+		box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+	}
+
+	.end-text {
+		font-family: 'DM Mono', monospace;
+		font-size: 4rem;
+		font-weight: 500;
+		color: #fff;
+		text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 4px 8px rgba(0, 0, 0, 0.6);
+		letter-spacing: 0.1em;
+		pointer-events: none;
+	}
+
+	.splash-screen {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+		z-index: 100000;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 3rem;
+		transition: opacity 0.5s ease, transform 0.5s ease;
+		overflow: hidden;
+	}
+
+	.splash-screen::before,
+	.splash-screen::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+
+	.splash-screen::before {
+		background-image:
+			radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+			radial-gradient(2px 2px at 60px 70px, #fff, transparent),
+			radial-gradient(1px 1px at 50px 50px, #ddd, transparent),
+			radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+			radial-gradient(2px 2px at 90px 10px, #fff, transparent),
+			radial-gradient(1px 1px at 20px 100px, #ddd, transparent),
+			radial-gradient(1px 1px at 150px 150px, #eee, transparent),
+			radial-gradient(2px 2px at 70px 120px, #fff, transparent);
+		background-size: 200px 200px;
+		background-repeat: repeat;
+		animation: stars-move 120s linear infinite;
+	}
+
+	.splash-screen::after {
+		background-image:
+			radial-gradient(1px 1px at 40px 60px, #fff, transparent),
+			radial-gradient(1px 1px at 110px 90px, #ddd, transparent),
+			radial-gradient(1px 1px at 170px 30px, #fff, transparent),
+			radial-gradient(2px 2px at 10px 140px, #eee, transparent),
+			radial-gradient(1px 1px at 140px 120px, #fff, transparent),
+			radial-gradient(1px 1px at 80px 160px, #ddd, transparent);
+		background-size: 200px 200px;
+		background-repeat: repeat;
+		animation: stars-move 180s linear infinite;
+		opacity: 0.7;
+	}
+
+	@keyframes stars-move {
+		from {
+			transform: translateY(0);
+		}
+		to {
+			transform: translateY(-200px);
+		}
+	}
+
+	.splash-screen.hidden {
+		opacity: 0;
+		transform: scale(0.95);
+		pointer-events: none;
+	}
+
+	.splash-title {
+		font-family: 'DM Mono', monospace;
+		font-size: clamp(3rem, 12vw, 8rem);
+		font-weight: 500;
+		color: #fff;
+		letter-spacing: 0.05em;
+		text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+		text-align: center;
+		animation: splash-float 3s ease-in-out infinite;
+	}
+
+	.splash-subtitle {
+		font-family: 'DM Mono', monospace;
+		font-size: clamp(0.9rem, 2vw, 1.2rem);
+		font-weight: 300;
+		color: rgba(255, 255, 255, 0.9);
+		letter-spacing: 0.1em;
+		text-align: center;
+		margin-top: -2rem;
+	}
+
+	.start-btn {
+		background: #fff;
+		color: #667eea;
+		font-family: 'DM Mono', monospace;
+		font-size: 1.1rem;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		padding: 1rem 3rem;
+		border: none;
+		border-radius: 999px;
+		cursor: pointer;
+		box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		text-transform: uppercase;
+	}
+
+	.start-btn:hover {
+		transform: translateY(-3px) scale(1.05);
+		box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+	}
+
+	.start-btn:active {
+		transform: translateY(0) scale(0.98);
+	}
+
+	.splash-wurst {
+		position: absolute;
+		width: 8rem;
+		height: 8rem;
+		opacity: 0.3;
+		pointer-events: none;
+		animation: splash-wurst-float 6s ease-in-out infinite;
+	}
+
+	.splash-wurst img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.2));
+	}
+
+	.splash-wurst:nth-child(1) {
+		top: 15%;
+		left: 10%;
+		animation-delay: 0s;
+		--rotation: -20deg;
+	}
+
+	.splash-wurst:nth-child(2) {
+		top: 25%;
+		right: 15%;
+		animation-delay: 1s;
+		--rotation: 30deg;
+	}
+
+	.splash-wurst:nth-child(3) {
+		bottom: 20%;
+		left: 15%;
+		animation-delay: 2s;
+		--rotation: 15deg;
+	}
+
+	.splash-wurst:nth-child(4) {
+		bottom: 30%;
+		right: 10%;
+		animation-delay: 1.5s;
+		--rotation: -25deg;
+	}
+
+	@keyframes splash-wurst-float {
+		0%, 100% {
+			transform: translateY(0) rotate(var(--rotation, 0deg));
+		}
+		50% {
+			transform: translateY(-20px) rotate(calc(var(--rotation, 0deg) + 10deg));
+		}
+	}
+
+	@keyframes splash-float {
+		0%, 100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
+	}
+
+	@keyframes sparkle-fly {
+		0% {
+			opacity: 1;
+			transform: scale(1) translate(0, 0);
+		}
+		70% {
+			opacity: 0.8;
+		}
+		100% {
+			opacity: 0;
+			transform: scale(0.3) translate(var(--dx), var(--dy));
+		}
+	}
+
+	.flame {
+		position: fixed;
+		pointer-events: none;
+		border-radius: 50% 50% 40% 40% / 60% 60% 50% 50%;
+		background: radial-gradient(ellipse at left center,
+			#ffeb3b 0%,
+			#ff9800 20%,
+			#ff5722 40%,
+			#f44336 60%,
+			rgba(244, 67, 54, 0.6) 80%,
+			transparent 100%);
+		filter: blur(8px);
+		animation: flame-stream 3s ease-out forwards, flame-wave 0.15s ease-in-out infinite;
+		transform-origin: 0% 50%;
+	}
+
+	@keyframes flame-stream {
+		0% {
+			opacity: 1;
+			transform: var(--rotation) scaleX(0);
+		}
+		10% {
+			transform: var(--rotation) scaleX(1);
+		}
+		85% {
+			opacity: 1;
+			transform: var(--rotation) scaleX(1);
+		}
+		100% {
+			opacity: 0;
+			transform: var(--rotation) scaleX(0.8);
+		}
+	}
+
+	@keyframes flame-wave {
+		0%, 100% {
+			filter: blur(8px) brightness(1);
+		}
+		33% {
+			filter: blur(9px) brightness(1.15);
+		}
+		66% {
+			filter: blur(7px) brightness(0.95);
+		}
+	}
+
+	.counter.glowing {
+		color: #f97316;
+		text-shadow: 0 0 20px rgba(249, 115, 22, 0.6), 0 0 40px rgba(249, 115, 22, 0.3), 0 0 80px rgba(249, 115, 22, 0.15);
+		transition: color 0.3s ease, text-shadow 0.3s ease, font-size 0.3s ease;
+	}
+
+	body.dark .counter.glowing {
+		text-shadow: 0 0 20px rgba(249, 115, 22, 0.8), 0 0 50px rgba(249, 115, 22, 0.4), 0 0 100px rgba(249, 115, 22, 0.2);
+	}
+
+	.counter.wurst-boost {
+		color: #16a34a;
+		text-shadow: 0 0 20px rgba(22, 163, 74, 0.6), 0 0 40px rgba(22, 163, 74, 0.3), 0 0 80px rgba(22, 163, 74, 0.15);
+		transition: color 0.3s ease, text-shadow 0.3s ease;
+	}
+
+	body.dark .counter.wurst-boost {
+		text-shadow: 0 0 20px rgba(22, 163, 74, 0.8), 0 0 50px rgba(22, 163, 74, 0.4), 0 0 100px rgba(22, 163, 74, 0.2);
+	}
+
+	.green-spark {
+		position: fixed;
+		width: 3px;
+		height: 3px;
+		border-radius: 50%;
+		pointer-events: none;
+		animation: green-spark-fly 0.8s ease-out forwards;
+	}
+
+	@keyframes green-spark-fly {
+		0% {
+			opacity: 1;
+			transform: translate(0, 0) scale(1);
+		}
+		100% {
+			opacity: 0;
+			transform: translate(var(--sx), var(--sy)) scale(0);
+		}
+	}
+
+	.heat-spark {
+		position: fixed;
+		width: 3px;
+		height: 3px;
+		border-radius: 50%;
+		pointer-events: none;
+		animation: heat-spark-fly 0.6s ease-out forwards;
+	}
+
+	@keyframes heat-spark-fly {
+		0% {
+			opacity: 1;
+			transform: translate(0, 0) scale(1);
+		}
+		100% {
+			opacity: 0;
+			transform: translate(var(--sx), var(--sy)) scale(0);
+		}
+	}
+
+	.wurst {
+		position: fixed;
+		cursor: grab;
+		z-index: 9999;
+		animation: wurst-fall 1.2s ease-in forwards;
+	}
+
+	.wurst:active {
+		cursor: grabbing;
+	}
+
+	@keyframes wurst-fall {
+		0% {
+			top: -100px;
+			transform: rotate(0deg);
+		}
+		100% {
+			top: var(--ground);
+			transform: rotate(var(--rotation));
+		}
+	}
+
+	.x2-popup {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0);
+		font-family: 'DM Mono', monospace;
+		font-size: clamp(3rem, 12vw, 8rem);
+		font-weight: 500;
+		color: #f97316;
+		pointer-events: none;
+		opacity: 0;
+		text-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
+		z-index: 10;
+	}
+
+	.x2-popup.show {
+		animation: x2-pop 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+	}
+
+	@keyframes x2-pop {
+		0% {
+			opacity: 0;
+			transform: translate(-50%, -50%) scale(0);
+		}
+		20% {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1.2);
+		}
+		40% {
+			transform: translate(-50%, -50%) scale(0.95);
+		}
+		60% {
+			transform: translate(-50%, -50%) scale(1);
+		}
+		80% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+			transform: translate(-50%, -80%) scale(0.8);
+		}
+	}
+
+	.notification {
+		position: fixed;
+		top: 5rem;
+		left: 50%;
+		transform: translateX(-50%) translateY(-20px);
+		background: #2563eb;
+		color: #fff;
+		font-family: 'DM Mono', monospace;
+		font-size: 0.8rem;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		padding: 0.6rem 1.4rem;
+		border-radius: 999px;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.4s ease, transform 0.4s ease;
+		white-space: nowrap;
+	}
+
+	.notification.show {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+		pointer-events: auto;
+	}
+</style>
+</head>
+<body>
+
+<div class="counter" id="counter">0</div>
+<div class="hint" id="hint">klick irgendwo</div>
+<a class="shop-btn" id="shopBtn" href="shop.html">shop</a>
+<button class="reset-btn" id="resetBtn" type="button">reset</button>
+<div class="notification" id="notification"></div>
+<div class="x2-popup" id="x2popup">x2!!</div>
+<button class="dark-toggle" id="darkToggle" type="button" aria-label="Dark Mode">
+	<svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+</button>
+<button class="auto-clicker-btn" id="autoClickerBtn" type="button">auto-click</button>
+<div class="cheater-text" id="cheaterText">CHEATER</div>
+<div class="cheated-label" id="cheatedLabel">Hat Gecheatet</div>
+<div class="highscore" id="highscore">highscore: <span class="highscore-value" id="highscoreValue">0</span> klicks/s</div>
+<div class="timer" id="timer">zeit: <span class="timer-value" id="timerValue">0:00</span></div>
+
+<div class="splash-screen" id="splashScreen">
+	<div class="splash-wurst"><img src="assets/ahle-wurscht.png" alt="wurst"></div>
+	<div class="splash-wurst"><img src="assets/ahle-wurscht.png" alt="wurst"></div>
+	<div class="splash-wurst"><img src="assets/ahle-wurscht.png" alt="wurst"></div>
+	<div class="splash-wurst"><img src="assets/ahle-wurscht.png" alt="wurst"></div>
+	<div class="splash-title">KLICKER</div>
+	<div class="splash-subtitle">klick dich zum sieg</div>
+	<button class="start-btn" id="startBtn" type="button">start</button>
+</div>
+
+<script>
+	if (localStorage.getItem('dark') === 'true') document.body.classList.add('dark');
+
+	// Splash screen
+	const splashScreen = document.getElementById('splashScreen');
+	const startBtn = document.getElementById('startBtn');
+	const hasStarted = localStorage.getItem('game_started') === 'true';
+
+	if (hasStarted) {
+		splashScreen.classList.add('hidden');
+		setTimeout(() => splashScreen.remove(), 500);
+	}
+
+	startBtn.addEventListener('click', () => {
+		splashScreen.classList.add('hidden');
+		localStorage.setItem('game_started', 'true');
+		setTimeout(() => splashScreen.remove(), 500);
+	});
+
+	document.getElementById('darkToggle').addEventListener('click', () => {
+		document.body.classList.toggle('dark');
+		localStorage.setItem('dark', document.body.classList.contains('dark'));
+	});
+
+	let count = parseFloat(localStorage.getItem('count')) || 0;
+	let increment_value = parseFloat(localStorage.getItem('increment_value')) || 1;
+	let activeCosmetic = localStorage.getItem('active_cosmetic') || '';
+	const counter = document.getElementById('counter');
+	const hint = document.getElementById('hint');
+	const notificationEl = document.getElementById('notification');
+	const baseFontVw = 20;
+	const glitterColors = ['#a855f7', '#6366f1', '#ec4899', '#f59e0b', '#10b981'];
+	const flameColors = ['#ef4444', '#f97316', '#eab308', '#dc2626', '#f59e0b'];
+	let audioCtx = null;
+	let notificationTimeout = null;
+	let notifiedKeys = JSON.parse(localStorage.getItem('notified') || '[]');
+
+	// streak system
+	const clickTimestamps = [];
+	let isGlowing = false;
+	let streakStart = 0;
+	let hasX2 = false;
+	let sparkInterval = null;
+	const sparkColors = ['#f97316', '#eab308', '#ef4444', '#fbbf24'];
+
+	// auto-clicker system
+	let autoClickerEnabled = localStorage.getItem('auto_clicker_enabled') === 'true';
+	let autoClickerInterval = null;
+	let hasCheated = localStorage.getItem('has_cheated') === 'true';
+	const autoClickerBtn = document.getElementById('autoClickerBtn');
+	const cheaterText = document.getElementById('cheaterText');
+	const cheatedLabel = document.getElementById('cheatedLabel');
+
+	if (hasCheated) {
+		cheatedLabel.classList.add('show');
+	}
+
+	// Restore auto-clicker state
+	if (autoClickerEnabled) {
+		autoClickerBtn.classList.add('active');
+		cheaterText.classList.add('show');
+	}
+
+	// highscore system
+	let highscore = parseFloat(localStorage.getItem('highscore')) || 0;
+	const highscoreValueEl = document.getElementById('highscoreValue');
+
+	function updateHighscoreDisplay() {
+		highscoreValueEl.textContent = highscore.toFixed(1);
+	}
+
+	function getClickRate() {
+		const now = Date.now();
+		// Count clicks in last 1 second
+		const recentClicks = clickTimestamps.filter(t => t >= now - 1000);
+		return recentClicks.length;
+	}
+
+	function updateHighscore() {
+		if (autoClickerEnabled) return; // Ignore cheat mode
+		const rate = getClickRate();
+		if (rate > highscore) {
+			highscore = rate;
+			localStorage.setItem('highscore', highscore);
+			updateHighscoreDisplay();
+		}
+	}
+
+	updateHighscoreDisplay();
+
+	// timer system
+	let timerStarted = localStorage.getItem('timer_started') === 'true';
+	let timerStartTime = parseInt(localStorage.getItem('timer_start_time')) || 0;
+	let timerInterval = null;
+	let timerStopped = localStorage.getItem('timer_stopped') === 'true';
+	let gameEnded = false;
+	const timerValueEl = document.getElementById('timerValue');
+
+	function startTimer() {
+		if (timerStarted || timerStopped) return;
+		timerStarted = true;
+		timerStartTime = Date.now();
+		localStorage.setItem('timer_started', 'true');
+		localStorage.setItem('timer_start_time', timerStartTime);
+		timerInterval = setInterval(updateTimer, 100);
+	}
+
+	function updateTimer() {
+		const elapsed = Date.now() - timerStartTime;
+		const seconds = Math.floor(elapsed / 1000);
+		const minutes = Math.floor(seconds / 60);
+		const secs = seconds % 60;
+		timerValueEl.textContent = minutes + ':' + (secs < 10 ? '0' : '') + secs;
+	}
+
+	function stopTimer() {
+		if (timerInterval) {
+			clearInterval(timerInterval);
+			timerInterval = null;
+			timerStopped = true;
+			localStorage.setItem('timer_stopped', 'true');
+		}
+	}
+
+	// Restore timer if it was running
+	if (timerStarted && !timerStopped) {
+		timerInterval = setInterval(updateTimer, 100);
+		updateTimer();
+	}
+
+	function checkGameComplete() {
+		if (gameEnded) return;
+		const ownedCosmetics = JSON.parse(localStorage.getItem('owned_cosmetics') || '[]');
+		const hasAllCosmetics = ownedCosmetics.includes('wurst') &&
+								ownedCosmetics.includes('glitter') &&
+								ownedCosmetics.includes('flames');
+		if (increment_value >= 3.5 && hasAllCosmetics && count >= 2000 && !document.getElementById('endWurst')) {
+			gameEnded = true;
+			spawnEndWurst();
+		}
+	}
+
+	function spawnEndWurst() {
+		// Remove all existing wursts from cosmetic effect
+		const existingWursts = document.querySelectorAll('.wurst');
+		existingWursts.forEach(w => w.remove());
+
+		const endWurst = document.createElement('div');
+		endWurst.id = 'endWurst';
+		endWurst.className = 'end-wurst';
+
+		const endText = document.createElement('div');
+		endText.className = 'end-text';
+		endText.textContent = 'ENDE';
+		endWurst.appendChild(endText);
+
+		endWurst.addEventListener('click', () => {
+			stopTimer();
+			alert('Spiel beendet! Zeit: ' + timerValueEl.textContent);
+			endWurst.remove();
+		});
+
+		document.body.appendChild(endWurst);
+	}
+
+	function getClicksInWindow() {
+		const now = Date.now();
+		while (clickTimestamps.length && clickTimestamps[0] < now - 5000) {
+			clickTimestamps.shift();
+		}
+		return clickTimestamps.length;
+	}
+
+	function spawnHeatSpark() {
+		const rect = counter.getBoundingClientRect();
+		const dot = document.createElement('div');
+		dot.className = 'heat-spark';
+		const angle = Math.random() * Math.PI * 2;
+		const dist = 30 + Math.random() * 60;
+		dot.style.setProperty('--sx', Math.cos(angle) * dist + 'px');
+		dot.style.setProperty('--sy', Math.sin(angle) * dist + 'px');
+		dot.style.left = (rect.left + Math.random() * rect.width) + 'px';
+		dot.style.top = (rect.top + Math.random() * rect.height) + 'px';
+		dot.style.background = sparkColors[Math.floor(Math.random() * sparkColors.length)];
+		const s = (2 + Math.random() * 4) + 'px';
+		dot.style.width = s;
+		dot.style.height = s;
+		document.body.appendChild(dot);
+		dot.addEventListener('animationend', () => dot.remove());
+	}
+
+	function spawnGreenSpark() {
+		const rect = counter.getBoundingClientRect();
+		const dot = document.createElement('div');
+		dot.className = 'green-spark';
+		const angle = Math.random() * Math.PI * 2;
+		const dist = 40 + Math.random() * 80;
+		dot.style.setProperty('--sx', Math.cos(angle) * dist + 'px');
+		dot.style.setProperty('--sy', Math.sin(angle) * dist + 'px');
+		dot.style.left = (rect.left + Math.random() * rect.width) + 'px';
+		dot.style.top = (rect.top + Math.random() * rect.height) + 'px';
+		dot.style.background = '#16a34a';
+		const s = (3 + Math.random() * 5) + 'px';
+		dot.style.width = s;
+		dot.style.height = s;
+		document.body.appendChild(dot);
+		dot.addEventListener('animationend', () => dot.remove());
+	}
+
+	function startGlow() {
+		if (isGlowing) return;
+		isGlowing = true;
+		streakStart = Date.now();
+		hasX2 = false;
+		counter.classList.add('glowing');
+		sparkInterval = setInterval(() => {
+			for (let i = 0; i < 3; i++) spawnHeatSpark();
+		}, 80);
+	}
+
+	function stopGlow() {
+		if (!isGlowing) return;
+		isGlowing = false;
+		hasX2 = false;
+		streakStart = 0;
+		counter.classList.remove('glowing');
+		if (sparkInterval) {
+			clearInterval(sparkInterval);
+			sparkInterval = null;
+		}
+	}
+
+	function showX2() {
+		const el = document.getElementById('x2popup');
+		el.classList.remove('show');
+		void el.offsetWidth;
+		el.classList.add('show');
+		setTimeout(() => el.classList.remove('show'), 1200);
+	}
+
+	function updateStreak() {
+		clickTimestamps.push(Date.now());
+		const clicks = getClicksInWindow();
+		if (clicks >= 30) {
+			startGlow();
+			if (isGlowing && !hasX2 && Date.now() - streakStart >= 10000) {
+				hasX2 = true;
+				showX2();
+			}
+		}
+	}
+
+	// check streak decay
+	setInterval(() => {
+		if (isGlowing && getClicksInWindow() < 30) {
+			stopGlow();
+		}
+	}, 200);
+
+	// migrate old glitter key
+	if (localStorage.getItem('glitter') === 'true') {
+		let owned = JSON.parse(localStorage.getItem('owned_cosmetics') || '[]');
+		if (!owned.includes('glitter')) owned.push('glitter');
+		if (!activeCosmetic) activeCosmetic = 'glitter';
+		localStorage.removeItem('glitter');
+		localStorage.setItem('owned_cosmetics', JSON.stringify(owned));
+		localStorage.setItem('active_cosmetic', activeCosmetic);
+	}
+
+	function showNotification(text) {
+		notificationEl.textContent = text;
+		notificationEl.classList.add('show');
+		if (notificationTimeout) clearTimeout(notificationTimeout);
+		notificationTimeout = setTimeout(() => {
+			notificationEl.classList.remove('show');
+		}, 3000);
+	}
+
+	function checkUnlocks() {
+		const owned = JSON.parse(localStorage.getItem('owned_cosmetics') || '[]');
+		// cosmetic: wurst at 20 clicks (needs flames first)
+		if (owned.includes('flames') && !owned.includes('wurst') && count >= 20 && !notifiedKeys.includes('cosm_wurst')) {
+			showNotification('neues cosmetic verfügbar!');
+			notifiedKeys.push('cosm_wurst');
+			localStorage.setItem('notified', JSON.stringify(notifiedKeys));
+		}
+		// offer 1: +1.2 at 100 clicks
+		if (increment_value < 1.2 && count >= 100 && !notifiedKeys.includes('offer1')) {
+			showNotification('neues upgrade im shop verfügbar!');
+			notifiedKeys.push('offer1');
+			localStorage.setItem('notified', JSON.stringify(notifiedKeys));
+		}
+		// offer 2: +1.6 at 250 clicks
+		if (increment_value >= 1.2 && increment_value < 1.6 && count >= 250 && !notifiedKeys.includes('offer2')) {
+			showNotification('neues upgrade im shop verfügbar!');
+			notifiedKeys.push('offer2');
+			localStorage.setItem('notified', JSON.stringify(notifiedKeys));
+		}
+		// offer 3: +2 at 500 clicks
+		if (increment_value >= 1.6 && increment_value < 2 && count >= 500 && !notifiedKeys.includes('offer3')) {
+			showNotification('neues upgrade im shop verfügbar!');
+			notifiedKeys.push('offer3');
+			localStorage.setItem('notified', JSON.stringify(notifiedKeys));
+		}
+		// offer 4: +3.5 at 1000 clicks
+		if (increment_value >= 2 && increment_value < 3.5 && count >= 1000 && !notifiedKeys.includes('offer4')) {
+			showNotification('neues upgrade im shop verfügbar!');
+			notifiedKeys.push('offer4');
+			localStorage.setItem('notified', JSON.stringify(notifiedKeys));
+		}
+		// cosmetic: glitter at 300 clicks (needs both click upgrades bought first)
+		if (increment_value >= 1.6 && !owned.includes('glitter') && count >= 300 && !notifiedKeys.includes('cosm_glitter')) {
+			showNotification('neues cosmetic verfügbar!');
+			notifiedKeys.push('cosm_glitter');
+			localStorage.setItem('notified', JSON.stringify(notifiedKeys));
+		}
+		// cosmetic: flames at 700 clicks
+		if (owned.includes('glitter') && !owned.includes('flames') && count >= 700 && !notifiedKeys.includes('cosm_flames')) {
+			showNotification('neues cosmetic verfügbar!');
+			notifiedKeys.push('cosm_flames');
+			localStorage.setItem('notified', JSON.stringify(notifiedKeys));
+		}
+	}
+
+	function playBling() {
+		if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+		const now = audioCtx.currentTime;
+		const notes = [1200, 1500, 1800, 2400];
+		notes.forEach((freq, i) => {
+			const osc = audioCtx.createOscillator();
+			const gain = audioCtx.createGain();
+			osc.type = 'sine';
+			osc.frequency.value = freq;
+			gain.gain.setValueAtTime(0.15, now + i * 0.07);
+			gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.07 + 0.4);
+			osc.connect(gain);
+			gain.connect(audioCtx.destination);
+			osc.start(now + i * 0.07);
+			osc.stop(now + i * 0.07 + 0.4);
+		});
+	}
+
+	function playFlamethrower() {
+		if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+		const now = audioCtx.currentTime;
+		const dur = 0.8;
+
+		// roaring noise base
+		const noise = audioCtx.createBufferSource();
+		const buf = audioCtx.createBuffer(1, audioCtx.sampleRate * dur, audioCtx.sampleRate);
+		const data = buf.getChannelData(0);
+		for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+		noise.buffer = buf;
+
+		// low rumble filter
+		const lowpass = audioCtx.createBiquadFilter();
+		lowpass.type = 'lowpass';
+		lowpass.frequency.setValueAtTime(800, now);
+		lowpass.frequency.exponentialRampToValueAtTime(150, now + dur);
+		lowpass.Q.value = 3;
+
+		// crackling mid band
+		const bandpass = audioCtx.createBiquadFilter();
+		bandpass.type = 'bandpass';
+		bandpass.frequency.setValueAtTime(1200, now);
+		bandpass.frequency.exponentialRampToValueAtTime(300, now + dur);
+		bandpass.Q.value = 1.5;
+
+		const noiseGain = audioCtx.createGain();
+		noiseGain.gain.setValueAtTime(0.3, now);
+		noiseGain.gain.linearRampToValueAtTime(0.35, now + 0.1);
+		noiseGain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+		noise.connect(lowpass);
+		lowpass.connect(noiseGain);
+		noise.connect(bandpass);
+		bandpass.connect(noiseGain);
+		noiseGain.connect(audioCtx.destination);
+		noise.start(now);
+		noise.stop(now + dur);
+
+		// low thud
+		const osc = audioCtx.createOscillator();
+		osc.type = 'sawtooth';
+		osc.frequency.setValueAtTime(80, now);
+		osc.frequency.exponentialRampToValueAtTime(30, now + 0.4);
+		const oscGain = audioCtx.createGain();
+		oscGain.gain.setValueAtTime(0.12, now);
+		oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+		osc.connect(oscGain);
+		oscGain.connect(audioCtx.destination);
+		osc.start(now);
+		osc.stop(now + 0.4);
+	}
+
+	function playEatSound() {
+		if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+		const now = audioCtx.currentTime;
+
+		// Chewing sounds - three chews
+		const chewTimes = [0, 0.25, 0.5];
+		chewTimes.forEach(startDelay => {
+			const osc1 = audioCtx.createOscillator();
+			const osc2 = audioCtx.createOscillator();
+			const gain = audioCtx.createGain();
+
+			osc1.type = 'sine';
+			osc2.type = 'square';
+			osc1.frequency.setValueAtTime(200, now + startDelay);
+			osc1.frequency.exponentialRampToValueAtTime(120, now + startDelay + 0.15);
+			osc2.frequency.setValueAtTime(300, now + startDelay);
+			osc2.frequency.exponentialRampToValueAtTime(180, now + startDelay + 0.15);
+
+			gain.gain.setValueAtTime(0.15, now + startDelay);
+			gain.gain.exponentialRampToValueAtTime(0.001, now + startDelay + 0.15);
+
+			osc1.connect(gain);
+			osc2.connect(gain);
+			gain.connect(audioCtx.destination);
+			osc1.start(now + startDelay);
+			osc2.start(now + startDelay);
+			osc1.stop(now + startDelay + 0.15);
+			osc2.stop(now + startDelay + 0.15);
+		});
+
+		// Lip smacking/wet sound
+		const noise = audioCtx.createBufferSource();
+		const buf = audioCtx.createBuffer(1, audioCtx.sampleRate * 0.4, audioCtx.sampleRate);
+		const data = buf.getChannelData(0);
+		for (let i = 0; i < data.length; i++) {
+			data[i] = (Math.random() * 2 - 1) * Math.sin(i / 100);
+		}
+		noise.buffer = buf;
+
+		const filter = audioCtx.createBiquadFilter();
+		filter.type = 'bandpass';
+		filter.frequency.value = 1500;
+		filter.Q.value = 3;
+
+		const noiseGain = audioCtx.createGain();
+		noiseGain.gain.setValueAtTime(0.06, now);
+		noiseGain.gain.linearRampToValueAtTime(0.08, now + 0.3);
+		noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.7);
+
+		noise.connect(filter);
+		filter.connect(noiseGain);
+		noiseGain.connect(audioCtx.destination);
+		noise.start(now);
+		noise.stop(now + 0.7);
+	}
+
+	function playPigSound() {
+		const audio = new Audio('assets/pig-oink.mp3');
+		audio.volume = 0.5;
+		audio.play();
+	}
+
+	function playPigSqueal() {
+		if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+		const now = audioCtx.currentTime;
+		const dur = 0.8;
+
+		// Main squeal oscillator
+		const osc1 = audioCtx.createOscillator();
+		osc1.type = 'sawtooth';
+		osc1.frequency.setValueAtTime(550, now);
+		osc1.frequency.exponentialRampToValueAtTime(850, now + dur * 0.3);
+		osc1.frequency.exponentialRampToValueAtTime(700, now + dur);
+
+		// Vibrato for realism
+		const vibrato = audioCtx.createOscillator();
+		vibrato.type = 'sine';
+		vibrato.frequency.value = 6;
+		const vibratoGain = audioCtx.createGain();
+		vibratoGain.gain.value = 40;
+		vibrato.connect(vibratoGain);
+		vibratoGain.connect(osc1.frequency);
+
+		// Second harmonic
+		const osc2 = audioCtx.createOscillator();
+		osc2.type = 'square';
+		osc2.frequency.setValueAtTime(1100, now);
+		osc2.frequency.exponentialRampToValueAtTime(1700, now + dur * 0.3);
+		osc2.frequency.exponentialRampToValueAtTime(1400, now + dur);
+
+		// Filter for nasal quality
+		const filter = audioCtx.createBiquadFilter();
+		filter.type = 'bandpass';
+		filter.frequency.value = 1200;
+		filter.Q.value = 3;
+
+		// Main gain envelope
+		const gain = audioCtx.createGain();
+		gain.gain.setValueAtTime(0, now);
+		gain.gain.linearRampToValueAtTime(0.3, now + 0.05);
+		gain.gain.linearRampToValueAtTime(0.25, now + dur * 0.7);
+		gain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+		// Connect everything
+		osc1.connect(filter);
+		osc2.connect(filter);
+		filter.connect(gain);
+		gain.connect(audioCtx.destination);
+
+		// Start and stop
+		osc1.start(now);
+		osc2.start(now);
+		vibrato.start(now);
+		osc1.stop(now + dur);
+		osc2.stop(now + dur);
+		vibrato.stop(now + dur);
+	}
+
+	function spawnGlitter() {
+		const cx = window.innerWidth / 2;
+		const cy = window.innerHeight / 2;
+		for (let i = 0; i < 50; i++) {
+			const dot = document.createElement('div');
+			dot.className = 'sparkle';
+			const angle = Math.random() * Math.PI * 2;
+			const dist = 120 + Math.random() * 350;
+			dot.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+			dot.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+			dot.style.left = cx + 'px';
+			dot.style.top = cy + 'px';
+			dot.style.background = glitterColors[Math.floor(Math.random() * glitterColors.length)];
+			const size = (6 + Math.random() * 10) + 'px';
+			dot.style.width = size;
+			dot.style.height = size;
+			dot.style.animationDuration = (0.8 + Math.random() * 0.6) + 's';
+			document.body.appendChild(dot);
+			dot.addEventListener('animationend', () => dot.remove());
+		}
+		playBling();
+	}
+
+	function spawnFlames() {
+		const w = window.innerWidth;
+		const h = window.innerHeight;
+		const cx = w / 2;
+		const cy = h / 2;
+		const corners = [
+			{ x: 0, y: h },
+			{ x: w, y: h },
+			{ x: 0, y: 0 },
+			{ x: w, y: 0 }
+		];
+		corners.forEach(corner => {
+			const dx = cx - corner.x;
+			const dy = cy - corner.y;
+			const angleRad = Math.atan2(dy, dx);
+			const beamLength = Math.sqrt(dx * dx + dy * dy);
+
+			// Create single continuous flame beam
+			const flame = document.createElement('div');
+			flame.className = 'flame';
+
+			// Set size (width = length, height = thickness)
+			const thickness = 80 + Math.random() * 40;
+			const length = beamLength * 0.7;
+			flame.style.width = length + 'px';
+			flame.style.height = thickness + 'px';
+
+			// Position at corner (centered vertically)
+			flame.style.left = corner.x + 'px';
+			flame.style.top = (corner.y - thickness / 2) + 'px';
+
+			// Rotate towards center
+			// atan2 gives angle from positive x-axis (0° = right, 90° = up)
+			// Flame grows to the right by default (0°)
+			const angleDeg = angleRad * 180 / Math.PI;
+			flame.style.setProperty('--rotation', `rotate(${angleDeg}deg)`);
+
+			document.body.appendChild(flame);
+			flame.addEventListener('animationend', () => flame.remove());
+		});
+		playFlamethrower();
+	}
+
+	function spawnWurst() {
+		const wurst = document.createElement('div');
+		wurst.className = 'wurst';
+
+		const img = document.createElement('img');
+		img.src = 'assets/ahle-wurscht.png';
+		img.style.width = '100%';
+		img.style.height = '100%';
+		img.style.objectFit = 'contain';
+		wurst.appendChild(img);
+
+		const size = (3.5 + Math.random() * 11.5) * 16;
+		wurst.style.width = size + 'px';
+		wurst.style.height = size + 'px';
+
+		const xPos = Math.random() * (window.innerWidth - 60);
+		wurst.style.left = xPos + 'px';
+
+		const groundY = window.innerHeight - size - 10;
+		wurst.style.setProperty('--ground', groundY + 'px');
+
+		const rotation = (Math.random() - 0.5) * 90;
+		wurst.style.setProperty('--rotation', rotation + 'deg');
+
+		document.body.appendChild(wurst);
+
+		wurst.addEventListener('click', (e) => {
+			e.stopPropagation();
+			wurst.remove();
+
+			// Play pig sound and add +5 points
+			playPigSound();
+			count += 5;
+			localStorage.setItem('count', count);
+			updateDisplay();
+
+			// Green glow and sparks for 1.5 seconds
+			counter.classList.add('wurst-boost');
+			const sparkInterval = setInterval(() => {
+				for (let i = 0; i < 4; i++) spawnGreenSpark();
+			}, 60);
+
+			setTimeout(() => {
+				counter.classList.remove('wurst-boost');
+				clearInterval(sparkInterval);
+			}, 1500);
+		});
+
+		wurst.addEventListener('animationend', () => {
+			wurst.style.top = groundY + 'px';
+			wurst.style.transform = 'rotate(' + rotation + 'deg)';
+			wurst.style.animation = 'none';
+
+			// Make draggable after landing
+			wurst.draggable = true;
+		});
+
+		// Drag handlers
+		let dragStartX, dragStartY;
+		wurst.addEventListener('dragstart', (e) => {
+			dragStartX = e.clientX;
+			dragStartY = e.clientY;
+			e.dataTransfer.effectAllowed = 'move';
+		});
+
+		wurst.addEventListener('dragend', (e) => {
+			// Check if dragged outside window bounds
+			const isOutside = e.clientX <= 0 || e.clientX >= window.innerWidth ||
+							  e.clientY <= 0 || e.clientY >= window.innerHeight;
+
+			if (isOutside) {
+				wurst.remove();
+
+				// Play squeal and add +25 points
+				playPigSqueal();
+				count += 25;
+				localStorage.setItem('count', count);
+				updateDisplay();
+
+				// Green glow and sparks for 1.5 seconds
+				counter.classList.add('wurst-boost');
+				const sparkInterval = setInterval(() => {
+					for (let i = 0; i < 4; i++) spawnGreenSpark();
+				}, 60);
+
+				setTimeout(() => {
+					counter.classList.remove('wurst-boost');
+					clearInterval(sparkInterval);
+				}, 1500);
+			}
+		});
+
+		playEatSound();
+	}
+
+	function displayCount() {
+		const display = Math.floor(count * 10) / 10;
+		counter.textContent = display % 1 === 0 ? display.toFixed(0) : display.toFixed(1);
+	}
+
+	function getFontSize(digits) {
+		const scale = 1 / digits;
+		return 'clamp(4rem, ' + (baseFontVw * scale).toFixed(2) + 'vw, ' + (14 * scale).toFixed(1) + 'rem)';
+	}
+
+	function updateFontSize() {
+		const display = Math.floor(count * 10) / 10;
+		const text = display % 1 === 0 ? display.toFixed(0) : display.toFixed(1);
+		counter.style.fontSize = getFontSize(text.length);
+	}
+
+	displayCount();
+	updateFontSize();
+	checkGameComplete();
+
+	function increment() {
+		startTimer();
+		checkGameComplete();
+
+		const prevText = counter.textContent;
+		const multiplier = hasX2 ? 2 : 1;
+		count += increment_value * multiplier;
+		localStorage.setItem('count', count);
+		updateStreak();
+		displayCount();
+
+		const newText = counter.textContent;
+		if (newText.length !== prevText.length) {
+			updateFontSize();
+		}
+
+		counter.classList.remove('plop');
+		void counter.offsetWidth;
+		counter.classList.add('plop');
+
+		if (activeCosmetic && !gameEnded) {
+			const added = increment_value * multiplier;
+			const prevHundred = Math.floor((count - added) / 100);
+			const newHundred = Math.floor(count / 100);
+			if (newHundred > prevHundred) {
+				if (activeCosmetic === 'glitter') spawnGlitter();
+				else if (activeCosmetic === 'flames') spawnFlames();
+				else if (activeCosmetic === 'wurst') spawnWurst();
+			}
+		}
+
+		checkUnlocks();
+
+		if (!hint.classList.contains('hidden')) {
+			hint.classList.add('hidden');
+		}
+
+		updateHighscore();
+	}
+
+	document.getElementById('resetBtn').addEventListener('click', () => {
+		localStorage.removeItem('count');
+		localStorage.removeItem('increment_value');
+		localStorage.removeItem('glitter');
+		localStorage.removeItem('owned_cosmetics');
+		localStorage.removeItem('active_cosmetic');
+		localStorage.removeItem('notified');
+		localStorage.removeItem('has_cheated');
+		localStorage.removeItem('auto_clicker_enabled');
+		localStorage.removeItem('highscore');
+		localStorage.removeItem('timer_started');
+		localStorage.removeItem('timer_start_time');
+		localStorage.removeItem('timer_stopped');
+		localStorage.removeItem('game_started');
+		location.reload();
+	});
+
+	document.body.addEventListener('click', (e) => {
+		if (e.target.closest('#shopBtn, #resetBtn, #darkToggle, #autoClickerBtn, #endWurst')) return;
+		if (!autoClickerEnabled) {
+			increment();
+		}
+	});
+
+	document.body.addEventListener('mousedown', (e) => {
+		if (e.target.closest('#shopBtn, #resetBtn, #darkToggle, #autoClickerBtn, #endWurst')) return;
+		if (autoClickerEnabled && !autoClickerInterval) {
+			autoClickerInterval = setInterval(() => {
+				increment();
+			}, 50); // 20 clicks per second
+		}
+	});
+
+	document.body.addEventListener('mouseup', (e) => {
+		if (autoClickerEnabled && autoClickerInterval) {
+			clearInterval(autoClickerInterval);
+			autoClickerInterval = null;
+		}
+	});
+
+	// Stop auto-clicker if mouse leaves the window
+	document.addEventListener('mouseleave', () => {
+		if (autoClickerEnabled && autoClickerInterval) {
+			clearInterval(autoClickerInterval);
+			autoClickerInterval = null;
+		}
+	});
+
+	document.addEventListener('keydown', (e) => {
+		if (e.code === 'Space') {
+			e.preventDefault();
+			if (autoClickerEnabled) {
+				// Auto-clicker mode: hold space for rapid clicks
+				if (!autoClickerInterval) {
+					autoClickerInterval = setInterval(() => {
+						increment();
+					}, 50); // 20 clicks per second
+				}
+			} else {
+				// Normal mode: single click
+				if (!e.repeat) {
+					increment();
+				}
+			}
+		}
+	});
+
+	document.addEventListener('keyup', (e) => {
+		if (e.code === 'Space' && autoClickerEnabled && autoClickerInterval) {
+			clearInterval(autoClickerInterval);
+			autoClickerInterval = null;
+		}
+	});
+
+	autoClickerBtn.addEventListener('click', () => {
+		autoClickerEnabled = !autoClickerEnabled;
+		autoClickerBtn.classList.toggle('active', autoClickerEnabled);
+		cheaterText.classList.toggle('show', autoClickerEnabled);
+		localStorage.setItem('auto_clicker_enabled', autoClickerEnabled);
+
+		if (autoClickerEnabled) {
+			hasCheated = true;
+			localStorage.setItem('has_cheated', 'true');
+			cheatedLabel.classList.add('show');
+		}
+	});
+</script>
+
+</body>
+</html>

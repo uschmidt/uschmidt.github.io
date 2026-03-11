@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmetics</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;500&display=swap" rel="stylesheet">
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html, body {
+		height: 100%;
+		overflow: hidden;
+	}
+
+	:root {
+		--bg: #fff;
+		--fg: #111;
+		--muted: #888;
+		--desc: #666;
+		--balance: #999;
+		--card-bg: #f8f8f8;
+		--card-border: #eee;
+	}
+
+	body.dark {
+		--bg: #111;
+		--fg: #eee;
+		--muted: #666;
+		--desc: #999;
+		--balance: #666;
+		--card-bg: #1a1a1a;
+		--card-border: #2a2a2a;
+	}
+
+	body {
+		background: var(--bg);
+		color: var(--fg);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'DM Mono', monospace;
+		user-select: none;
+		-webkit-user-select: none;
+		transition: background 0.3s ease, color 0.3s ease;
+	}
+
+	.items {
+		display: flex;
+		gap: 1.5rem;
+		align-items: stretch;
+	}
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.8rem;
+		padding: 1.5rem 1.8rem;
+		border-radius: 1rem;
+		border: 1px solid var(--card-border);
+		background: var(--card-bg);
+		min-width: 180px;
+		transition: border-color 0.2s ease, background 0.2s ease;
+	}
+
+	.card.active {
+		border-color: #a855f7;
+	}
+
+	.card-icon {
+		font-size: 1.6rem;
+		line-height: 1;
+	}
+
+	.card-icon img {
+		width: 1.6rem;
+		height: 1.6rem;
+		object-fit: contain;
+	}
+
+	.card-title {
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--fg);
+	}
+
+	.card-desc {
+		font-size: 0.75rem;
+		font-weight: 300;
+		color: var(--desc);
+		text-align: center;
+		line-height: 1.4;
+	}
+
+	.card-btn {
+		margin-top: auto;
+		background: linear-gradient(135deg, #a855f7, #6366f1);
+		color: #fff;
+		font-family: 'DM Mono', monospace;
+		font-size: 0.8rem;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		padding: 0.5rem 1.4rem;
+		border: none;
+		border-radius: 999px;
+		cursor: pointer;
+		transition: transform 0.15s ease, opacity 0.3s ease;
+	}
+
+	.card-btn:hover {
+		transform: scale(1.05);
+	}
+
+	.card-btn:active {
+		transform: scale(0.97);
+	}
+
+	.card-btn:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+		transform: none;
+	}
+
+	.card-btn.select-btn {
+		background: transparent;
+		border: 1px solid #a855f7;
+		color: #a855f7;
+	}
+
+	.card-btn.selected {
+		background: #a855f7;
+		color: #fff;
+		border: none;
+	}
+
+	.card-label {
+		font-size: 0.7rem;
+		font-weight: 300;
+		color: var(--muted);
+		letter-spacing: 0.04em;
+	}
+
+	.balance {
+		position: fixed;
+		top: 2rem;
+		right: 2.5rem;
+		font-size: 0.85rem;
+		font-weight: 300;
+		color: var(--balance);
+		letter-spacing: 0.04em;
+	}
+
+	.page-label {
+		position: fixed;
+		top: 2rem;
+		left: 2.5rem;
+		font-size: 0.85rem;
+		font-weight: 300;
+		color: var(--muted);
+		letter-spacing: 0.06em;
+	}
+
+	.back-btn {
+		position: fixed;
+		bottom: 2.5rem;
+		right: 2.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.6rem;
+		height: 2.6rem;
+		background: #2563eb;
+		color: #fff;
+		border: none;
+		border-radius: 999px;
+		cursor: pointer;
+		text-decoration: none;
+		transition: background 0.2s ease, transform 0.15s ease;
+	}
+
+	.back-btn:hover {
+		background: #1d4ed8;
+		transform: scale(1.05);
+	}
+
+	.back-btn:active {
+		transform: scale(0.97);
+	}
+
+	.back-btn svg {
+		width: 1.1rem;
+		height: 1.1rem;
+		fill: none;
+		stroke: #fff;
+		stroke-width: 2.2;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+</style>
+</head>
+<body>
+
+<div class="page-label">cosmetics</div>
+
+<div class="items">
+	<div class="card" id="wurstCard">
+		<div class="card-icon"><img src="assets/ahle-wurscht.png" alt="wurst"></div>
+		<div class="card-title">alte wurst</div>
+		<div class="card-desc">wurst fällt von oben<br>bei jeder 100er marke</div>
+		<button class="card-btn" id="wurstBtn" type="button">20 klicks</button>
+		<div class="card-label" id="wurstLabel"></div>
+	</div>
+	<div class="card" id="glitterCard">
+		<div class="card-icon">&#10024;</div>
+		<div class="card-title">glitzer</div>
+		<div class="card-desc">glitzer-explosion<br>bei jeder 100er marke</div>
+		<button class="card-btn" id="glitterBtn" type="button">300 klicks</button>
+		<div class="card-label" id="glitterLabel"></div>
+	</div>
+	<div class="card" id="flamesCard">
+		<div class="card-icon">&#128293;</div>
+		<div class="card-title">flammen</div>
+		<div class="card-desc">flammen aus den ecken<br>bei jeder 100er marke</div>
+		<button class="card-btn" id="flamesBtn" type="button">700 klicks</button>
+		<div class="card-label" id="flamesLabel"></div>
+	</div>
+</div>
+
+<div class="balance" id="balance"></div>
+
+<a class="back-btn" href="shop.html" aria-label="Zurück">
+	<svg viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+</a>
+
+<script>
+	if (localStorage.getItem('dark') === 'true') document.body.classList.add('dark');
+
+	let count = parseFloat(localStorage.getItem('count')) || 0;
+	let ownedCosmetics = JSON.parse(localStorage.getItem('owned_cosmetics') || '[]');
+	let activeCosmetic = localStorage.getItem('active_cosmetic') || '';
+
+	// migrate old glitter data
+	if (localStorage.getItem('glitter') === 'true') {
+		if (!ownedCosmetics.includes('glitter')) ownedCosmetics.push('glitter');
+		if (!activeCosmetic) activeCosmetic = 'glitter';
+		localStorage.removeItem('glitter');
+		localStorage.setItem('owned_cosmetics', JSON.stringify(ownedCosmetics));
+		localStorage.setItem('active_cosmetic', activeCosmetic);
+	}
+
+	const balanceEl = document.getElementById('balance');
+	const wurstBtn = document.getElementById('wurstBtn');
+	const glitterBtn = document.getElementById('glitterBtn');
+	const flamesBtn = document.getElementById('flamesBtn');
+	const wurstLabel = document.getElementById('wurstLabel');
+	const glitterLabel = document.getElementById('glitterLabel');
+	const flamesLabel = document.getElementById('flamesLabel');
+	const wurstCard = document.getElementById('wurstCard');
+	const glitterCard = document.getElementById('glitterCard');
+	const flamesCard = document.getElementById('flamesCard');
+
+	function displayBalance() {
+		const display = Math.floor(count * 10) / 10;
+		const text = display % 1 === 0 ? display.toFixed(0) : display.toFixed(1);
+		balanceEl.textContent = text + ' klicks';
+	}
+
+	function updateUI() {
+		displayBalance();
+		const ownsWurst = ownedCosmetics.includes('wurst');
+		const ownsGlitter = ownedCosmetics.includes('glitter');
+		const ownsFlames = ownedCosmetics.includes('flames');
+
+		wurstCard.classList.toggle('active', activeCosmetic === 'wurst');
+		glitterCard.classList.toggle('active', activeCosmetic === 'glitter');
+		flamesCard.classList.toggle('active', activeCosmetic === 'flames');
+
+		// wurst button - needs flames first
+		if (!ownsFlames) {
+			wurstBtn.className = 'card-btn';
+			wurstBtn.textContent = '20 klicks';
+			wurstBtn.disabled = true;
+			wurstLabel.textContent = 'flammen zuerst kaufen';
+		} else if (ownsWurst) {
+			wurstBtn.className = 'card-btn select-btn' + (activeCosmetic === 'wurst' ? ' selected' : '');
+			wurstBtn.textContent = activeCosmetic === 'wurst' ? 'aktiv' : 'auswählen';
+			wurstBtn.disabled = false;
+			wurstLabel.textContent = '';
+		} else {
+			wurstBtn.className = 'card-btn';
+			wurstBtn.textContent = '20 klicks';
+			wurstBtn.disabled = count < 20;
+			wurstLabel.textContent = '';
+		}
+
+		// glitter button
+		if (ownsGlitter) {
+			glitterBtn.className = 'card-btn select-btn' + (activeCosmetic === 'glitter' ? ' selected' : '');
+			glitterBtn.textContent = activeCosmetic === 'glitter' ? 'aktiv' : 'auswählen';
+			glitterBtn.disabled = false;
+			glitterLabel.textContent = '';
+		} else {
+			glitterBtn.className = 'card-btn';
+			glitterBtn.textContent = '300 klicks';
+			glitterBtn.disabled = count < 300;
+			glitterLabel.textContent = '';
+		}
+
+		// flames button
+		if (!ownsGlitter) {
+			flamesBtn.className = 'card-btn';
+			flamesBtn.textContent = '700 klicks';
+			flamesBtn.disabled = true;
+			flamesLabel.textContent = 'glitzer zuerst kaufen';
+		} else if (ownsFlames) {
+			flamesBtn.className = 'card-btn select-btn' + (activeCosmetic === 'flames' ? ' selected' : '');
+			flamesBtn.textContent = activeCosmetic === 'flames' ? 'aktiv' : 'auswählen';
+			flamesBtn.disabled = false;
+			flamesLabel.textContent = '';
+		} else {
+			flamesBtn.className = 'card-btn';
+			flamesBtn.textContent = '700 klicks';
+			flamesBtn.disabled = count < 700;
+			flamesLabel.textContent = '';
+		}
+	}
+
+	updateUI();
+
+	wurstBtn.addEventListener('click', () => {
+		const ownsWurst = ownedCosmetics.includes('wurst');
+		const ownsFlames = ownedCosmetics.includes('flames');
+		if (ownsWurst) {
+			activeCosmetic = 'wurst';
+			localStorage.setItem('active_cosmetic', activeCosmetic);
+			updateUI();
+		} else if (ownsFlames && count >= 20) {
+			count -= 20;
+			ownedCosmetics.push('wurst');
+			activeCosmetic = 'wurst';
+			localStorage.setItem('count', count);
+			localStorage.setItem('owned_cosmetics', JSON.stringify(ownedCosmetics));
+			localStorage.setItem('active_cosmetic', activeCosmetic);
+			updateUI();
+		}
+	});
+
+	glitterBtn.addEventListener('click', () => {
+		const ownsGlitter = ownedCosmetics.includes('glitter');
+		if (ownsGlitter) {
+			activeCosmetic = 'glitter';
+			localStorage.setItem('active_cosmetic', activeCosmetic);
+			updateUI();
+		} else if (count >= 300) {
+			count -= 300;
+			ownedCosmetics.push('glitter');
+			activeCosmetic = 'glitter';
+			localStorage.setItem('count', count);
+			localStorage.setItem('owned_cosmetics', JSON.stringify(ownedCosmetics));
+			localStorage.setItem('active_cosmetic', activeCosmetic);
+			updateUI();
+		}
+	});
+
+	flamesBtn.addEventListener('click', () => {
+		const ownsFlames = ownedCosmetics.includes('flames');
+		if (ownsFlames) {
+			activeCosmetic = 'flames';
+			localStorage.setItem('active_cosmetic', activeCosmetic);
+			updateUI();
+		} else if (ownedCosmetics.includes('glitter') && count >= 700) {
+			count -= 700;
+			ownedCosmetics.push('flames');
+			activeCosmetic = 'flames';
+			localStorage.setItem('count', count);
+			localStorage.setItem('owned_cosmetics', JSON.stringify(ownedCosmetics));
+			localStorage.setItem('active_cosmetic', activeCosmetic);
+			updateUI();
+		}
+	});
+</script>
+
+</body>
+</html>
