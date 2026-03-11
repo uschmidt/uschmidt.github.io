@@ -19,6 +19,25 @@
 		box-sizing: border-box;
 	}
 
+	body {
+		opacity: 0;
+		animation: page-fade-in 0.3s ease forwards;
+	}
+
+	body.page-exit {
+		animation: page-fade-out 0.2s ease forwards;
+	}
+
+	@keyframes page-fade-in {
+		from { opacity: 0; transform: translateY(6px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+
+	@keyframes page-fade-out {
+		from { opacity: 1; transform: translateY(0); }
+		to { opacity: 0; transform: translateY(-6px); }
+	}
+
 	html, body {
 		height: 100%;
 		overflow: hidden;
@@ -185,7 +204,28 @@
 		stroke-width: 2;
 		stroke-linecap: round;
 		stroke-linejoin: round;
-		transition: stroke 0.3s ease;
+		position: absolute;
+		transition: stroke 0.3s ease, transform 0.4s ease, opacity 0.3s ease;
+	}
+
+	.dark-toggle .icon-moon {
+		opacity: 1;
+		transform: rotate(0deg) scale(1);
+	}
+
+	.dark-toggle .icon-sun {
+		opacity: 0;
+		transform: rotate(-90deg) scale(0.5);
+	}
+
+	body.dark .dark-toggle .icon-moon {
+		opacity: 0;
+		transform: rotate(90deg) scale(0.5);
+	}
+
+	body.dark .dark-toggle .icon-sun {
+		opacity: 1;
+		transform: rotate(0deg) scale(1);
 	}
 
 	.auto-clicker-btn {
@@ -701,6 +741,7 @@
 		pointer-events: none;
 		transition: opacity 0.4s ease, transform 0.4s ease;
 		white-space: nowrap;
+		z-index: 10001;
 	}
 
 	.notification.show {
@@ -763,6 +804,10 @@
 		.cheated-label {
 			bottom: 3.8rem;
 		}
+
+		.cheater-text {
+			font-size: clamp(4rem, 15vw, 8rem);
+		}
 	}
 </style>
 </head>
@@ -775,7 +820,8 @@
 <div class="notification" id="notification"></div>
 <div class="x2-popup" id="x2popup">x2!!</div>
 <button class="dark-toggle" id="darkToggle" type="button" aria-label="Dark Mode">
-	<svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+	<svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+	<svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 <button class="auto-clicker-btn" id="autoClickerBtn" type="button">auto-click</button>
 <div class="cheater-text" id="cheaterText">CHEATER</div>
@@ -1636,6 +1682,17 @@
 			localStorage.setItem('has_cheated', 'true');
 			cheatedLabel.classList.add('show');
 		}
+	});
+
+	// Page transitions
+	document.querySelectorAll('a[href]').forEach(link => {
+		link.addEventListener('click', (e) => {
+			const href = link.getAttribute('href');
+			if (!href || href.startsWith('#') || href.startsWith('http')) return;
+			e.preventDefault();
+			document.body.classList.add('page-exit');
+			setTimeout(() => { window.location.href = href; }, 200);
+		});
 	});
 </script>
 
